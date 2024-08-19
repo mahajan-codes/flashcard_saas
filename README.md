@@ -6,6 +6,8 @@ Project 4 of Headstarter Fellowship - Flashcards creation
 
 ```bash
 npm install
+npm install --save @stripe/react-stripe-js @stripe/stripe-js
+npm install node
 ```
 
 ### Build
