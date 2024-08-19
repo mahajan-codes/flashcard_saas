@@ -1,9 +1,14 @@
-import { useState, useSearchParams, useRouter } from "react";
+"use client";
+import React from "react";
+import { useState, useEffect } from "react";
+// import { useRouter } from "next/router";
+// import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "next/navigation";
 import { Typography, Box, Container, CircularProgress } from "@mui/material";
 // This section sets up the component, initializing state variables for loading, session data, and potential errors.
 //  It also extracts the `session_id` from the URL parameters.
 const ResultPage = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const searchParams = useSearchParams();
   const session_id = searchParams.get("session_id");
   const [loading, setLoading] = useState(true);
@@ -79,3 +84,4 @@ const ResultPage = () => {
     </Container>
   );
 };
+export default ResultPage;
