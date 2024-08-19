@@ -1,10 +1,19 @@
-
+"use client";
 import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
-import { Container, Grid, Card, CardActionArea, CardContent, Box, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Card,
+  CardActionArea,
+  CardContent,
+  Box,
+  Typography,
+} from "@mui/material";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
-import { db } from "../firebase"; // Import your Firebase setup here
+import db from "../../firebase.js";
+// Import your Firebase setup here
 // This component uses Clerk’s `useUser` hook for authentication, React’s `useState`
 // for managing the flashcardsand their flip states
 // and Next.js’s `useSearchParams` to get the flashcard set ID from the URL
