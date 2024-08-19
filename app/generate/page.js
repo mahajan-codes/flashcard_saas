@@ -13,6 +13,8 @@ import {
   DialogContentText,
   DialogTitle,
   DialogContent,
+  Card,
+  CardContent,
 } from "@mui/material";
 
 export default function Generate() {

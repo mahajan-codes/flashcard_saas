@@ -1,14 +1,19 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDMoh_PjErBNdJsHPelRHdpIsZ_v2yH8PY",
-  authDomain: "flashcard-saas-b5e68.firebaseapp.com",
-  projectId: "flashcard-saas-b5e68",
-  storageBucket: "Yflashcard-saas-b5e68.appspot.com",
-  messagingSenderId: "445823457547",
-  appId: "1:445823457547:web:da334e0aa98db285f22a0e",
-  measurementId: "G-2C065F5J3G",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
-const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const firestore = getFirestore(app);
+const storage = getStorage(app);
 const db = getFirestore(app);
-export default db;
+export { firestore, storage, db };
