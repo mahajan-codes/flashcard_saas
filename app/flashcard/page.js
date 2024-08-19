@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
-import db from "../../firebase.js";
+import { db } from "../../firebase.js";
 // Import your Firebase setup here
 // This component uses Clerk’s `useUser` hook for authentication, React’s `useState`
 // for managing the flashcardsand their flip states
