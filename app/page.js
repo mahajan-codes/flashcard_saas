@@ -1,12 +1,25 @@
 "use client";
 
 // MAIN LANDING PAGE
-import { Button, Typography, Box, Grid, AppBar, Toolbar } from "@mui/material";
-import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import {
+  Button,
+  Typography,
+  Box,
+  Grid,
+  AppBar,
+  Toolbar,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { UserButton, SignedIn, SignedOut, isSignedIn } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 import getStripe from "../utils/get-stripe";
+import { useAuth } from "@clerk/nextjs";
 
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
+  const { isSignedIn } = useAuth();
+  // const router = useRouter();
   const handleSubmit = async () => {
     const checkoutSession = await fetch("/api/checkout_sessions", {
       method: "POST",
@@ -23,22 +36,52 @@ export default function Home() {
       console.warn(error.message);
     }
   };
-
+  const href = isSignedIn ? "/generate" : "/sign-in";
   return (
     <Box>
       {/* Header and Navbar */}
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "#1B1B1B",
+        }}
+      >
         <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Flashcard SaaS
+          <Typography variant={"h4"} color={"#fff"} sx={{ flexGrow: 1 }}>
+            Flashcard Generator
           </Typography>
           <SignedOut>
-            <Button color="inherit" href="/sign-in">
-              Login
-            </Button>
-            <Button color="inherit" href="/sign-up">
-              Sign Up
-            </Button>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767", // Custom background color
+                  color: "#FFFFFF", // Custom text color
+                  "&:hover": {
+                    backgroundColor: "#f89090", // Custom hover background color
+                  },
+                }}
+                href="/sign-in"
+              >
+                Login
+              </Button>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767", // Custom background color
+                  color: "#FFFFFF", // Custom text color
+                  "&:hover": {
+                    backgroundColor: "#f89090", // Custom hover background color
+                  },
+                }}
+                href="/sign-up"
+              >
+                Sign Up
+              </Button>
+            </Box>
           </SignedOut>
           <SignedIn>
             <UserButton />
@@ -55,14 +98,17 @@ export default function Home() {
         </Typography>
         <Button
           variant="contained"
-          color="primary"
-          sx={{ mt: 2, mr: 2 }}
-          href="/generate"
+          sx={{
+            border: "4px solid #f89090",
+            backgroundColor: "#676767", // Custom background color
+            color: "#FFFFFF", // Custom text color
+            "&:hover": {
+              backgroundColor: "#f89090", // Custom hover background color
+            },
+          }}
+          href={href}
         >
           Get Started
-        </Button>
-        <Button variant="outlined" color="primary" sx={{ mt: 2 }}>
-          Learn More
         </Button>
       </Box>
       {/* Feature Section */}
@@ -120,7 +166,43 @@ export default function Home() {
         </Box>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} sm={6} md={4}>
-            Basic Plan
+            <Card
+              sx={{
+                height: "300px", // Set a fixed height
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                backgroundColor: "#333", // Dark background color for the card
+              }}
+            >
+              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+                <Box mb={2}>
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontWeight: "bold", color: "#fff" }}
+                  >
+                    Basic Plan
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h3"
+                  component="div"
+                  sx={{ fontWeight: "bold", color: "#f89090" }}
+                >
+                  $0
+                </Typography>
+                <Box mt={2}>
+                  <Typography
+                    variant="body1"
+                    component="div"
+                    sx={{ color: "#c4c0c0" }}
+                  >
+                    Ideal for individuals and small teams
+                  </Typography>
+                </Box>
+              </CardContent>
+            </Card>
           </Grid>
           <Grid
             item
@@ -130,21 +212,64 @@ export default function Home() {
             sx={{ display: "flex", flexDirection: "column" }}
             gap={4}
           >
-            Pro Plan
-            <Button
-              variant="contained"
+            <Card
               sx={{
-                border: "4px solid #f89090",
-                backgroundColor: "#676767", // Custom background color
-                color: "#FFFFFF", // Custom text color
-                "&:hover": {
-                  backgroundColor: "#f89090", // Custom hover background color
-                },
+                height: "300px", // Set a fixed height
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                backgroundColor: "#333", // Dark background color for the card
               }}
-              onClick={handleSubmit}
             >
-              Upgrade to Pro
-            </Button>
+              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+                <Box mb={2}>
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontWeight: "bold", color: "#fff" }}
+                  >
+                    Pro Plan
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h3"
+                  component="div"
+                  sx={{ fontWeight: "bold", color: "#f89090" }}
+                >
+                  $3.99
+                </Typography>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{ color: "#dbd7d7" }}
+                >
+                  / one time fee
+                </Typography>
+                <Box my={2}>
+                  <Typography
+                    variant="body1"
+                    component="div"
+                    sx={{ color: "#c4c0c0" }}
+                  >
+                    Perfect for growing teams and advanced features
+                  </Typography>
+                </Box>
+                <Button
+                  variant="contained"
+                  sx={{
+                    border: "4px solid #f89090",
+                    backgroundColor: "#676767", // Custom background color
+                    color: "#FFFFFF", // Custom text color
+                    "&:hover": {
+                      backgroundColor: "#f89090", // Custom hover background color
+                    },
+                  }}
+                  onClick={handleSubmit}
+                >
+                  Upgrade to Pro
+                </Button>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Box>

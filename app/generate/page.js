@@ -16,6 +16,17 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
+import { storage, firestore, db } from "../../firebase";
+import { ref, uploadString, getDownloadURL } from "firebase/storage";
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  deleteDoc,
+  getDoc,
+} from "firebase/firestore";
 
 export default function Generate() {
   const [text, setText] = useState("");
@@ -35,6 +46,8 @@ export default function Generate() {
 
     try {
       const userDocRef = doc(collection(db, "users"), user.id);
+      console.log("hello");
+      console.log(`userDocRef: ${userDocRef}`);
       const userDocSnap = await getDoc(userDocRef);
 
       const batch = writeBatch(db);
@@ -97,37 +110,38 @@ export default function Generate() {
           Generate Flashcards
         </Typography>
         <TextField
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          label="Enter text"
+          label="Enter your text here..."
+          variant="outlined"
           fullWidth
+          value={text}
           multiline
           rows={4}
-          variant="outlined"
           sx={{ mb: 2 }}
+          onChange={(e) => setText(e.target.value)}
+          InputProps={{
+            style: { color: "#FFFFFF", backgroundColor: "#333" }, // Darker input field
+          }}
+          InputLabelProps={{
+            style: { color: "#BBBBBB" }, // Light label color
+          }}
         />
         <Button
           variant="contained"
           color="primary"
           onClick={handleSubmit}
           fullWidth
+          sx={{
+            border: "4px solid #f89090",
+            backgroundColor: "#676767", // Custom background color
+            color: "#FFFFFF", // Custom text color
+            "&:hover": {
+              backgroundColor: "#f89090", // Custom hover background color
+            },
+          }}
         >
           Generate Flashcards
         </Button>
       </Box>
-
-      {/* Save flashcard button */}
-      {flashcards.length > 0 && (
-        <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleOpenDialog}
-          >
-            Save Flashcards
-          </Button>
-        </Box>
-      )}
 
       {/* Flashcard display that has a grid of cards, each representing a flashcard with its front and back content*/}
       {flashcards.length > 0 && (
@@ -154,6 +168,18 @@ export default function Generate() {
         </Box>
       )}
 
+      {/* Save flashcard button */}
+      {flashcards.length > 0 && (
+        <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleOpenDialog}
+          >
+            Save Flashcards
+          </Button>
+        </Box>
+      )}
       {/* dialog component for naming and saving the flashcard set: */}
       <Dialog open={dialogOpen} onClose={handleCloseDialog}>
         <DialogTitle>Save Flashcard Set</DialogTitle>
