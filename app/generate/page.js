@@ -97,20 +97,34 @@ export default function Generate() {
           Generate Flashcards
         </Typography>
         <TextField
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          label="Enter text"
+          label="Enter your text here..."
+          variant="outlined"
           fullWidth
+          value={text}
           multiline
           rows={4}
-          variant="outlined"
           sx={{ mb: 2 }}
+          onChange={(e) => setText(e.target.value)}
+          InputProps={{
+            style: { color: "#FFFFFF", backgroundColor: "#333" }, // Darker input field
+          }}
+          InputLabelProps={{
+            style: { color: "#BBBBBB" }, // Light label color
+          }}
         />
         <Button
           variant="contained"
           color="primary"
           onClick={handleSubmit}
           fullWidth
+          sx={{
+            border: "4px solid #f89090",
+            backgroundColor: "#676767", // Custom background color
+            color: "#FFFFFF", // Custom text color
+            "&:hover": {
+              backgroundColor: "#f89090", // Custom hover background color
+            },
+          }}
         >
           Generate Flashcards
         </Button>

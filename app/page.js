@@ -94,15 +94,18 @@ export default function Home() {
         </Typography>
         <Button
           variant="contained"
-          color="primary"
-          sx={{ mt: 2, mr: 2 }}
+          sx={{
+            border: "4px solid #f89090",
+            backgroundColor: "#676767", // Custom background color
+            color: "#FFFFFF", // Custom text color
+            "&:hover": {
+              backgroundColor: "#f89090", // Custom hover background color
+            },
+          }}
           href="/generate"
         >
           Get Started
         </Button>
-        {/* <Button variant="outlined" color="primary" sx={{ mt: 2 }}>
-          Learn More
-        </Button> */}
       </Box>
       {/* Feature Section */}
       {/* This section highlights the key features of the application, using a grid layout to display them. */}
@@ -165,6 +168,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                backgroundColor: "#333", // Dark background color for the card
               }}
             >
               <CardContent sx={{ textAlign: "center", padding: 4 }}>
@@ -172,15 +176,15 @@ export default function Home() {
                   <Typography
                     variant="h5"
                     component="div"
-                    sx={{ fontWeight: "bold", color: "#333" }}
+                    sx={{ fontWeight: "bold", color: "#fff" }}
                   >
                     Basic Plan
                   </Typography>
                 </Box>
                 <Typography
-                  variant="h4"
+                  variant="h3"
                   component="div"
-                  sx={{ fontWeight: "bold", color: "#444" }}
+                  sx={{ fontWeight: "bold", color: "#f89090" }}
                 >
                   $0
                 </Typography>
@@ -188,7 +192,7 @@ export default function Home() {
                   <Typography
                     variant="body1"
                     component="div"
-                    sx={{ color: "#777" }}
+                    sx={{ color: "#c4c0c0" }}
                   >
                     Ideal for individuals and small teams
                   </Typography>
@@ -210,6 +214,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                backgroundColor: "#333", // Dark background color for the card
               }}
             >
               <CardContent sx={{ textAlign: "center", padding: 4 }}>
@@ -217,7 +222,7 @@ export default function Home() {
                   <Typography
                     variant="h5"
                     component="div"
-                    sx={{ fontWeight: "bold", color: "#333" }}
+                    sx={{ fontWeight: "bold", color: "#fff" }}
                   >
                     Pro Plan
                   </Typography>
@@ -229,14 +234,18 @@ export default function Home() {
                 >
                   $3.99
                 </Typography>
-                <Typography variant="h6" component="div" sx={{ color: "#777" }}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{ color: "#dbd7d7" }}
+                >
                   / one time fee
                 </Typography>
                 <Box my={2}>
                   <Typography
                     variant="body1"
                     component="div"
-                    sx={{ color: "#555" }}
+                    sx={{ color: "#c4c0c0" }}
                   >
                     Perfect for growing teams and advanced features
                   </Typography>
