@@ -7,7 +7,7 @@ import {
   Toolbar,
   Button,
 } from "@mui/material";
-import { SignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignUp, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 export default function SignUpPage() {
@@ -70,9 +70,9 @@ export default function SignUpPage() {
         sx={{ textAlign: "center", my: 4 }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          Sign In
+          Sign Up
         </Typography>
-        <SignIn />
+        <SignUp />
       </Box>
     </Box>
   );

@@ -62,7 +62,7 @@ export default function Home() {
               >
                 Login
               </Button>
-              {/* <Button
+              <Button
                 color="inherit"
                 variant="contained"
                 sx={{
@@ -76,7 +76,7 @@ export default function Home() {
                 href="/sign-up"
               >
                 Sign Up
-              </Button> */}
+              </Button>
             </Box>
           </SignedOut>
           <SignedIn>
@@ -100,9 +100,9 @@ export default function Home() {
         >
           Get Started
         </Button>
-        <Button variant="outlined" color="primary" sx={{ mt: 2 }}>
+        {/* <Button variant="outlined" color="primary" sx={{ mt: 2 }}>
           Learn More
-        </Button>
+        </Button> */}
       </Box>
       {/* Feature Section */}
       {/* This section highlights the key features of the application, using a grid layout to display them. */}
