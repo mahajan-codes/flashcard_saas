@@ -79,9 +79,9 @@ export default function Home() {
               </Button>
             </Box>
           </SignedOut>
-          {/* <SignedIn>
+          <SignedIn>
             <UserButton />
-          </SignedIn> */}
+          </SignedIn>
         </Toolbar>
       </AppBar>
       {/* Hero Section */}
