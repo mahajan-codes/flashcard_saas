@@ -16,6 +16,17 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
+import { storage, firestore, db } from "../../firebase";
+import { ref, uploadString, getDownloadURL } from "firebase/storage";
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  deleteDoc,
+  getDoc,
+} from "firebase/firestore";
 
 export default function Generate() {
   const [text, setText] = useState("");
@@ -35,6 +46,8 @@ export default function Generate() {
 
     try {
       const userDocRef = doc(collection(db, "users"), user.id);
+      console.log("hello");
+      console.log(`userDocRef: ${userDocRef}`);
       const userDocSnap = await getDoc(userDocRef);
 
       const batch = writeBatch(db);
