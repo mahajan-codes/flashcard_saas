@@ -130,19 +130,6 @@ export default function Generate() {
         </Button>
       </Box>
 
-      {/* Save flashcard button */}
-      {flashcards.length > 0 && (
-        <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleOpenDialog}
-          >
-            Save Flashcards
-          </Button>
-        </Box>
-      )}
-
       {/* Flashcard display that has a grid of cards, each representing a flashcard with its front and back content*/}
       {flashcards.length > 0 && (
         <Box sx={{ mt: 4 }}>
@@ -168,6 +155,18 @@ export default function Generate() {
         </Box>
       )}
 
+      {/* Save flashcard button */}
+      {flashcards.length > 0 && (
+        <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleOpenDialog}
+          >
+            Save Flashcards
+          </Button>
+        </Box>
+      )}
       {/* dialog component for naming and saving the flashcard set: */}
       <Dialog open={dialogOpen} onClose={handleCloseDialog}>
         <DialogTitle>Save Flashcard Set</DialogTitle>
