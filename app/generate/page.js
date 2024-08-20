@@ -173,7 +173,14 @@ export default function Generate() {
         <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
           <Button
             variant="contained"
-            color="primary"
+            sx={{
+              border: "4px solid #f89090",
+              backgroundColor: "#676767", // Custom background color
+              color: "#FFFFFF", // Custom text color
+              "&:hover": {
+                backgroundColor: "#f89090", // Custom hover background color
+              },
+            }}
             onClick={handleOpenDialog}
           >
             Save Flashcards
