@@ -167,10 +167,32 @@ export default function Home() {
                 justifyContent: "space-between",
               }}
             >
-              <CardContent>
-                <Typography variant="h6" component="div" textAlign={"center"}>
-                  Basic Plan
+              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+                <Box mb={2}>
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontWeight: "bold", color: "#333" }}
+                  >
+                    Basic Plan
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h4"
+                  component="div"
+                  sx={{ fontWeight: "bold", color: "#444" }}
+                >
+                  $0
                 </Typography>
+                <Box mt={2}>
+                  <Typography
+                    variant="body1"
+                    component="div"
+                    sx={{ color: "#777" }}
+                  >
+                    Ideal for individuals and small teams
+                  </Typography>
+                </Box>
               </CardContent>
             </Card>
           </Grid>
@@ -190,10 +212,35 @@ export default function Home() {
                 justifyContent: "space-between",
               }}
             >
-              <CardContent>
-                <Typography variant="h6" component="div" textAlign={"center"}>
-                  Pro Plan
+              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+                <Box mb={2}>
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ fontWeight: "bold", color: "#333" }}
+                  >
+                    Pro Plan
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h3"
+                  component="div"
+                  sx={{ fontWeight: "bold", color: "#f89090" }}
+                >
+                  $3.99
                 </Typography>
+                <Typography variant="h6" component="div" sx={{ color: "#777" }}>
+                  / one time fee
+                </Typography>
+                <Box my={2}>
+                  <Typography
+                    variant="body1"
+                    component="div"
+                    sx={{ color: "#555" }}
+                  >
+                    Perfect for growing teams and advanced features
+                  </Typography>
+                </Box>
                 <Button
                   variant="contained"
                   sx={{
