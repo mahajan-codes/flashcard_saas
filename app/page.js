@@ -11,11 +11,15 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { UserButton, SignedIn, SignedOut, isSignedIn } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 import getStripe from "../utils/get-stripe";
+import { useAuth } from "@clerk/nextjs";
 
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
+  const { isSignedIn } = useAuth();
+  // const router = useRouter();
   const handleSubmit = async () => {
     const checkoutSession = await fetch("/api/checkout_sessions", {
       method: "POST",
@@ -32,7 +36,7 @@ export default function Home() {
       console.warn(error.message);
     }
   };
-
+  const href = isSignedIn ? "/generate" : "/sign-in";
   return (
     <Box>
       {/* Header and Navbar */}
@@ -102,7 +106,7 @@ export default function Home() {
               backgroundColor: "#f89090", // Custom hover background color
             },
           }}
-          href="/generate"
+          href={href}
         >
           Get Started
         </Button>
