@@ -1,7 +1,16 @@
 "use client";
 
 // MAIN LANDING PAGE
-import { Button, Typography, Box, Grid, AppBar, Toolbar } from "@mui/material";
+import {
+  Button,
+  Typography,
+  Box,
+  Grid,
+  AppBar,
+  Toolbar,
+  Card,
+  CardContent,
+} from "@mui/material";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import getStripe from "../utils/get-stripe";
 
@@ -27,22 +36,52 @@ export default function Home() {
   return (
     <Box>
       {/* Header and Navbar */}
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "#1B1B1B",
+        }}
+      >
         <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Flashcard SaaS
+          <Typography variant={"h4"} color={"#fff"} sx={{ flexGrow: 1 }}>
+            Flashcard Generator
           </Typography>
           <SignedOut>
-            <Button color="inherit" href="/sign-in">
-              Login
-            </Button>
-            <Button color="inherit" href="/sign-up">
-              Sign Up
-            </Button>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767", // Custom background color
+                  color: "#FFFFFF", // Custom text color
+                  "&:hover": {
+                    backgroundColor: "#f89090", // Custom hover background color
+                  },
+                }}
+                href="/sign-in"
+              >
+                Login
+              </Button>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767", // Custom background color
+                  color: "#FFFFFF", // Custom text color
+                  "&:hover": {
+                    backgroundColor: "#f89090", // Custom hover background color
+                  },
+                }}
+                href="/sign-up"
+              >
+                Sign Up
+              </Button>
+            </Box>
           </SignedOut>
-          <SignedIn>
+          {/* <SignedIn>
             <UserButton />
-          </SignedIn>
+          </SignedIn> */}
         </Toolbar>
       </AppBar>
       {/* Hero Section */}
@@ -120,7 +159,20 @@ export default function Home() {
         </Box>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} sm={6} md={4}>
-            Basic Plan
+            <Card
+              sx={{
+                height: "300px", // Set a fixed height
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <CardContent>
+                <Typography variant="h6" component="div" textAlign={"center"}>
+                  Basic Plan
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
           <Grid
             item
@@ -130,21 +182,34 @@ export default function Home() {
             sx={{ display: "flex", flexDirection: "column" }}
             gap={4}
           >
-            Pro Plan
-            <Button
-              variant="contained"
+            <Card
               sx={{
-                border: "4px solid #f89090",
-                backgroundColor: "#676767", // Custom background color
-                color: "#FFFFFF", // Custom text color
-                "&:hover": {
-                  backgroundColor: "#f89090", // Custom hover background color
-                },
+                height: "300px", // Set a fixed height
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
               }}
-              onClick={handleSubmit}
             >
-              Upgrade to Pro
-            </Button>
+              <CardContent>
+                <Typography variant="h6" component="div" textAlign={"center"}>
+                  Pro Plan
+                </Typography>
+                <Button
+                  variant="contained"
+                  sx={{
+                    border: "4px solid #f89090",
+                    backgroundColor: "#676767", // Custom background color
+                    color: "#FFFFFF", // Custom text color
+                    "&:hover": {
+                      backgroundColor: "#f89090", // Custom hover background color
+                    },
+                  }}
+                  onClick={handleSubmit}
+                >
+                  Upgrade to Pro
+                </Button>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Box>
