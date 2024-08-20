@@ -62,7 +62,7 @@ export default function Home() {
               >
                 Login
               </Button>
-              <Button
+              {/* <Button
                 color="inherit"
                 variant="contained"
                 sx={{
@@ -76,7 +76,7 @@ export default function Home() {
                 href="/sign-up"
               >
                 Sign Up
-              </Button>
+              </Button> */}
             </Box>
           </SignedOut>
           <SignedIn>
