@@ -131,7 +131,6 @@ export default function Generate() {
         />
         <Button
           variant="contained"
-          color="primary"
           onClick={handleSubmit}
           fullWidth
           sx={{
@@ -156,7 +155,14 @@ export default function Generate() {
           <Grid container spacing={2}>
             {flashcards.map((flashcard, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
+                <Card
+                  sx={{
+                    height: "300px", // Set a fixed height
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <CardContent>
                     <Typography variant="h6">Front:</Typography>
                     <Typography>{flashcard.front}</Typography>
@@ -177,8 +183,15 @@ export default function Generate() {
         <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
           <Button
             variant="contained"
-            color="primary"
             onClick={handleOpenDialog}
+            sx={{
+              border: "4px solid #f89090",
+              backgroundColor: "#676767", // Custom background color
+              color: "#FFFFFF", // Custom text color
+              "&:hover": {
+                backgroundColor: "#f89090", // Custom hover background color
+              },
+            }}
           >
             Save Flashcards
           </Button>
