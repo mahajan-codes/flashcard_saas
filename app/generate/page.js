@@ -36,6 +36,8 @@ export default function Generate() {
 
   const handleOpenDialog = () => setDialogOpen(true);
   const handleCloseDialog = () => setDialogOpen(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [flippedCards, setFlippedCards] = useState({});
 
   // Save the flashcards in the firebase
   const saveFlashcards = async () => {
@@ -106,6 +108,12 @@ export default function Generate() {
       alert("An error occurred while generating flashcards. Please try again.");
     }
   };
+  const handleCardClick = (index) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index], // Toggle the flipped state for the clicked card
+    }));
+  };
 
   return (
     <Container maxWidth="md">
@@ -161,15 +169,20 @@ export default function Generate() {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
+                    transformStyle: "preserve-3d",
+                    transform: flippedCards[index]
+                      ? "perspective(1000px) rotateY(360deg)"
+                      : "perspective(1000px) rotateY(0deg)",
+                    cursor: "pointer", // indicates the card is clickable
+                    transition: "transform 0.8s ease-in-out",
                   }}
+                  onClick={() => handleCardClick(index)}
                 >
                   <CardContent>
-                    <Typography variant="h6">Front:</Typography>
-                    <Typography>{flashcard.front}</Typography>
-                    <Typography variant="h6" sx={{ mt: 2 }}>
-                      Back:
+                    <Typography>
+                      {flippedCards[index] ? flashcard.back : flashcard.front}
                     </Typography>
-                    <Typography>{flashcard.back}</Typography>
+                    {/* <Typography>{flashcard.back}</Typography> */}
                   </CardContent>
                 </Card>
               </Grid>
