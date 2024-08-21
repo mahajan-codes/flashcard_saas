@@ -175,6 +175,12 @@ export default function Generate() {
                       : "perspective(1000px) rotateY(0deg)",
                     cursor: "pointer", // indicates the card is clickable
                     transition: "transform 0.8s ease-in-out",
+                    border: "4px solid #f89090",
+                    backgroundColor: flippedCards[index]
+                      ? "#676767"
+                      : "#fafafa", // Change the background color based on the flip state
+                    color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
+                    fontFamily: "Arial, sans-serif",
                   }}
                   onClick={() => handleCardClick(index)}
                 >
@@ -182,7 +188,6 @@ export default function Generate() {
                     <Typography>
                       {flippedCards[index] ? flashcard.back : flashcard.front}
                     </Typography>
-                    {/* <Typography>{flashcard.back}</Typography> */}
                   </CardContent>
                 </Card>
               </Grid>
