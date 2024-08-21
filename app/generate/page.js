@@ -88,7 +88,11 @@ export default function Generate() {
       // send a POST request to our `/api/generate` endpoint with the input text.
       const response = await fetch("/api/generate", {
         method: "POST",
-        body: text,
+        // body: text,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text }), // Send the text as a JSON object
       });
 
       if (!response.ok) {
