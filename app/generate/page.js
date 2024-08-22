@@ -21,6 +21,7 @@ import {
 import { db } from "../../firebase";
 import { UserButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import { collection, doc, getDoc, writeBatch } from "firebase/firestore";
+import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 
 export default function Generate() {
   const [text, setText] = useState("");
@@ -118,9 +119,34 @@ export default function Generate() {
           backgroundColor: "#1B1B1B",
         }}
       >
-        <Toolbar>
-          <Typography variant={"h4"} color={"#fff"} sx={{ flexGrow: 1 }}>
-            Flashcard Generator
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+          }}
+          display="flex"
+          flexDirection="row"
+        >
+          <Button
+            sx={{
+              gap: 2,
+              "&:hover": {
+                backgroundColor: "#f89090", // Custom hover background color
+              },
+            }}
+            href="/"
+          >
+            <LibraryBookIcon sx={{ color: "#FFFFFF", fontSize: 32 }} />
+          </Button>
+          <Typography
+            variant={"h4"}
+            color={"#FFFFFF"}
+            sx={{
+              flexGrow: 1,
+              fontFamily: `'Fredericka the Great', cursive`,
+              fontWeight: "200",
+            }}
+          >
+            Study Stash
           </Typography>
           <SignedOut>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
@@ -240,12 +266,25 @@ export default function Generate() {
                         ? "#676767"
                         : "#fafafa", // Change the background color based on the flip state
                       color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
-                      fontFamily: "Arial, sans-serif",
                     }}
                     onClick={() => handleCardClick(index)}
                   >
-                    <CardContent>
-                      <Typography>
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center", // Center horizontally within the CardContent
+                        alignItems: "center", // Center vertically within the CardContent
+                        height: "100%", // Full height to center vertically
+                        padding: 2,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontSize: "20px",
+                          fontWeight: flippedCards[index] ? "normal" : "bold",
+                          // p: 10,
+                        }}
+                      >
                         {flippedCards[index] ? flashcard.back : flashcard.front}
                       </Typography>
                     </CardContent>

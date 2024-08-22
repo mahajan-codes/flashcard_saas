@@ -15,6 +15,7 @@ import {
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import getStripe from "../utils/get-stripe";
 import { useAuth } from "@clerk/nextjs";
+import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
@@ -38,7 +39,7 @@ export default function Home() {
   };
   const href = isSignedIn ? "/generate" : "/sign-in";
   return (
-    <Container maxWidth="100vw">
+    <Box>
       {/* Header and Navbar */}
       <AppBar
         position="static"
@@ -46,9 +47,34 @@ export default function Home() {
           backgroundColor: "#1B1B1B",
         }}
       >
-        <Toolbar>
-          <Typography variant={"h4"} color={"#fff"} sx={{ flexGrow: 1 }}>
-            Flashcard Generator
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+          }}
+          display="flex"
+          flexDirection="row"
+        >
+          <Button
+            sx={{
+              gap: 2,
+              "&:hover": {
+                backgroundColor: "#f89090", // Custom hover background color
+              },
+            }}
+            href="/"
+          >
+            <LibraryBookIcon sx={{ color: "#FFFFFF", fontSize: 32 }} />
+          </Button>
+          <Typography
+            variant={"h4"}
+            color={"#FFFFFF"}
+            sx={{
+              flexGrow: 1,
+              fontFamily: `'Fredericka the Great', cursive`,
+              fontWeight: "200",
+            }}
+          >
+            Study Stash
           </Typography>
           <SignedOut>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
@@ -90,10 +116,24 @@ export default function Home() {
       </AppBar>
       {/* Hero Section */}
       <Box sx={{ textAlign: "center", my: 4 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
-          Welcome to Flashcard SaaS
+        <Typography
+          variant="h3"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontFamily: `'Fredericka the Great', cursive`,
+            fontWeight: "400",
+            fontStyle: "normal",
+          }}
+        >
+          Boost Your Learning, One Flashcard at a Time
         </Typography>
-        <Typography variant="h5" component="h2" gutterBottom>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+        >
           The easiest way to create flashcards from your text.
         </Typography>
         <Button
@@ -123,7 +163,12 @@ export default function Home() {
         }}
       >
         <Box sx={{ marginBottom: "50px" }}>
-          <Typography variant="h4" component="h2" gutterBottom>
+          <Typography
+            variant="h3"
+            component="h2"
+            gutterBottom
+            sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+          >
             Features
           </Typography>
         </Box>
@@ -160,7 +205,12 @@ export default function Home() {
         }}
       >
         <Box sx={{ marginBottom: "50px" }}>
-          <Typography variant="h4" component="h2" gutterBottom>
+          <Typography
+            variant="h3"
+            component="h2"
+            gutterBottom
+            sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+          >
             Pricing
           </Typography>
         </Box>
@@ -180,7 +230,13 @@ export default function Home() {
                   <Typography
                     variant="h5"
                     component="div"
-                    sx={{ fontWeight: "bold", color: "#fff" }}
+                    sx={{
+                      fontWeight: "bold",
+                      color: "#fff",
+                      fontFamily: `'Fredericka the Great', cursive`,
+                      fontWeight: "400",
+                      fontStyle: "normal",
+                    }}
                   >
                     Basic Plan
                   </Typography>
@@ -226,7 +282,13 @@ export default function Home() {
                   <Typography
                     variant="h5"
                     component="div"
-                    sx={{ fontWeight: "bold", color: "#fff" }}
+                    sx={{
+                      fontWeight: "bold",
+                      color: "#fff",
+                      fontFamily: `'Fredericka the Great', cursive`,
+                      fontWeight: "400",
+                      fontStyle: "normal",
+                    }}
                   >
                     Pro Plan
                   </Typography>
@@ -273,6 +335,6 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-    </Container>
+    </Box>
   );
 }
