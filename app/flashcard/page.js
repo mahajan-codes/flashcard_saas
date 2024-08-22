@@ -18,7 +18,7 @@ import { db } from "../../firebase.js";
 // for managing the flashcardsand their flip states
 // and Next.js’s `useSearchParams` to get the flashcard set ID from the URL
 export default function Flashcard() {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { user } = useUser();
   const [flashcards, setFlashcards] = useState([]);
   const [flipped, setFlipped] = useState({});
 
@@ -38,8 +38,9 @@ export default function Flashcard() {
     // This function retrieves all flashcards in the specified set from Firestore and updates the `flashcards` state.
     async function getFlashcard() {
       if (!search || !user) return;
-
+      // Construct a reference to the Firestore collection where the flashcards are stored
       const colRef = collection(doc(collection(db, "users"), user.id), search);
+      // Retrieve all documents from the collection reference
       const docs = await getDocs(colRef);
       const flashcards = [];
       docs.forEach((doc) => {

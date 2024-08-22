@@ -53,9 +53,9 @@ export default function Home() {
         <Toolbar
           sx={{
             justifyContent: "space-between",
+            display: "flex",
+            flexDirection: "row",
           }}
-          display="flex"
-          flexDirection="row"
         >
           <Button
             sx={{
@@ -113,7 +113,39 @@ export default function Home() {
             </Box>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767",
+                  color: "#FFFFFF",
+                  "&:hover": {
+                    backgroundColor: "#f89090",
+                  },
+                }}
+                href="/generate"
+              >
+                Generate
+              </Button>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #f89090",
+                  backgroundColor: "#676767",
+                  color: "#FFFFFF",
+                  "&:hover": {
+                    backgroundColor: "#f89090",
+                  },
+                }}
+                href="/saved_cards"
+              >
+                Saved Cards
+              </Button>
+              <UserButton />
+            </Box>
           </SignedIn>
         </Toolbar>
       </AppBar>

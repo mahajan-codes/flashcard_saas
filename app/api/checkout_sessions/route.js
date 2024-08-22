@@ -14,17 +14,17 @@ export async function POST(req) {
   try {
     // Params contain information for checkout session
     const params = {
-      mode: "payment", // `mode` is set to ‘subscription’ for recurring payments
+      mode: "payment", // `mode` is set to payment for one time fee
       payment_method_types: ["card"], // only accept card payments
       line_items: [
-        // a single line item for the Pro subscription, priced at $3.99 one time fee.
+        // a single line item for the Supporter Version, priced at $0.99 one time fee.
         {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "Pro subscription",
+              name: "Supporter Version",
             },
-            unit_amount: formatAmountForStripe(3.99, "usd"), // $3.99
+            unit_amount: formatAmountForStripe(0.99, "usd"), // $3.99
             // recurring: {
             //   interval: "none",
             //   interval_count: 1,
