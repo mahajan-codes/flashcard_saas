@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-// import { useRouter } from "next/router";
-// import { useSearchParams } from "react-router-dom";
 import { useSearchParams } from "next/navigation";
 import { Typography, Box, Container, CircularProgress } from "@mui/material";
 // This section sets up the component, initializing state variables for loading, session data, and potential errors.

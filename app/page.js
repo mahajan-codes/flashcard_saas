@@ -2,6 +2,7 @@
 
 // MAIN LANDING PAGE
 import {
+  Container,
   Button,
   Typography,
   Box,
@@ -11,8 +12,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { UserButton, SignedIn, SignedOut, isSignedIn } from "@clerk/nextjs";
-import { useRouter } from "next/router";
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import getStripe from "../utils/get-stripe";
 import { useAuth } from "@clerk/nextjs";
 
@@ -38,7 +38,7 @@ export default function Home() {
   };
   const href = isSignedIn ? "/generate" : "/sign-in";
   return (
-    <Box>
+    <Container maxWidth="100vw">
       {/* Header and Navbar */}
       <AppBar
         position="static"
@@ -273,6 +273,6 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </Container>
   );
 }

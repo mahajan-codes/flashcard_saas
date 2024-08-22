@@ -8,12 +8,10 @@ import {
   CardContent,
 } from "@mui/material";
 
-import { SignedOut } from "@clerk/nextjs";
-
 // This flashcards page is responsible for fetching and displaying all of the user’s saved flashcard sets
 
 export default function Flashcard() {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { user } = useUser();
   const [flashcards, setFlashcards] = useState([]);
   const router = useRouter();
 
