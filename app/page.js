@@ -16,6 +16,9 @@ import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import getStripe from "../utils/get-stripe";
 import { useAuth } from "@clerk/nextjs";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
+import CreateIcon from "@mui/icons-material/Create";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
@@ -115,7 +118,16 @@ export default function Home() {
         </Toolbar>
       </AppBar>
       {/* Hero Section */}
-      <Box sx={{ textAlign: "center", my: 4 }}>
+      <Container
+        sx={{
+          textAlign: "center",
+          my: 4,
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+          alignItems: "center",
+        }}
+      >
         <Typography
           variant="h3"
           component="h1"
@@ -124,6 +136,7 @@ export default function Home() {
             fontFamily: `'Fredericka the Great', cursive`,
             fontWeight: "400",
             fontStyle: "normal",
+            textShadow: "6px 6px 6px #f89090",
           }}
         >
           Boost Your Learning, One Flashcard at a Time
@@ -132,13 +145,18 @@ export default function Home() {
           variant="h3"
           component="h2"
           gutterBottom
-          sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+          sx={{
+            fontFamily: `Great Vibes, cursive`,
+            fontWeight: 400,
+            textShadow: "6px 6px 6px #f89090",
+          }}
         >
           The easiest way to create flashcards from your text.
         </Typography>
         <Button
           variant="contained"
           sx={{
+            width: "200px",
             border: "4px solid #f89090",
             backgroundColor: "#676767", // Custom background color
             color: "#FFFFFF", // Custom text color
@@ -150,7 +168,7 @@ export default function Home() {
         >
           Get Started
         </Button>
-      </Box>
+      </Container>
       {/* Feature Section */}
       {/* This section highlights the key features of the application, using a grid layout to display them. */}
       <Box
@@ -167,7 +185,11 @@ export default function Home() {
             variant="h3"
             component="h2"
             gutterBottom
-            sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+            sx={{
+              fontFamily: `Great Vibes, cursive`,
+              fontWeight: 400,
+              textShadow: "6px 6px 6px #f89090",
+            }}
           >
             Features
           </Typography>
@@ -184,13 +206,50 @@ export default function Home() {
           }}
         >
           <Grid item xs={12} sm={6} md={4}>
-            <Typography color={"white"}>Feature 1</Typography>
+            <CreateIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <Typography
+              variant="h6"
+              component="h2"
+              gutterBottom
+              sx={{ fontWeight: 400 }}
+            >
+              AI-Powered Flashcard Generation
+            </Typography>
+            <Typography color={"white"}>
+              Automatically generate flashcards from the text you provide.
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography color={"white"}>Feature 2</Typography>
+            <BookmarkIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <Typography
+              variant="h6"
+              component="h2"
+              gutterBottom
+              sx={{ fontWeight: 400 }}
+            >
+              Saved Flashcard Sets
+            </Typography>
+            <Typography color={"white"}>
+              Easily save and access your flashcard sets for future study
+              sessions
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Typography color={"white"}>Feature 3</Typography>
+            <FolderOpenIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <Typography
+              variant="h6"
+              component="h2"
+              gutterBottom
+              sx={{
+                fontWeight: 400,
+              }}
+            >
+              Interactive Learning
+            </Typography>
+            <Typography color={"white"}>
+              Engage with your material through interactive flashcards designed
+              to enhance your study experience.
+            </Typography>
           </Grid>
         </Grid>
       </Box>
@@ -209,7 +268,11 @@ export default function Home() {
             variant="h3"
             component="h2"
             gutterBottom
-            sx={{ fontFamily: `Great Vibes, cursive`, fontWeight: 400 }}
+            sx={{
+              fontFamily: `Great Vibes, cursive`,
+              fontWeight: 400,
+              textShadow: "6px 6px 6px #f89090",
+            }}
           >
             Pricing
           </Typography>
@@ -218,14 +281,14 @@ export default function Home() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               sx={{
-                height: "300px", // Set a fixed height
+                height: "350px", // Set a fixed height
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 backgroundColor: "#333", // Dark background color for the card
               }}
             >
-              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+              <CardContent sx={{ textAlign: "center", padding: 6 }}>
                 <Box mb={2}>
                   <Typography
                     variant="h5"
@@ -250,11 +313,13 @@ export default function Home() {
                 </Typography>
                 <Box mt={2}>
                   <Typography
-                    variant="body1"
+                    variant="h7"
                     component="div"
                     sx={{ color: "#c4c0c0" }}
                   >
-                    Ideal for individuals and small teams
+                    Get started with essential features at no cost. Enhance your
+                    study experiences with flashcards created by our artificial
+                    intelligent model.
                   </Typography>
                 </Box>
               </CardContent>
@@ -270,14 +335,14 @@ export default function Home() {
           >
             <Card
               sx={{
-                height: "300px", // Set a fixed height
+                height: "350px", // Set a fixed height
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 backgroundColor: "#333", // Dark background color for the card
               }}
             >
-              <CardContent sx={{ textAlign: "center", padding: 4 }}>
+              <CardContent sx={{ textAlign: "center", padding: 6 }}>
                 <Box mb={2}>
                   <Typography
                     variant="h5"
@@ -290,7 +355,7 @@ export default function Home() {
                       fontStyle: "normal",
                     }}
                   >
-                    Pro Plan
+                    Supporter Version
                   </Typography>
                 </Box>
                 <Typography
@@ -298,10 +363,10 @@ export default function Home() {
                   component="div"
                   sx={{ fontWeight: "bold", color: "#f89090" }}
                 >
-                  $3.99
+                  $0.99
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="h7"
                   component="div"
                   sx={{ color: "#dbd7d7" }}
                 >
@@ -313,7 +378,8 @@ export default function Home() {
                     component="div"
                     sx={{ color: "#c4c0c0" }}
                   >
-                    Perfect for growing teams and advanced features
+                    Join our community and access essential features while
+                    contributing to the continuous improvement of our AI model.
                   </Typography>
                 </Box>
                 <Button
@@ -328,7 +394,7 @@ export default function Home() {
                   }}
                   onClick={handleSubmit}
                 >
-                  Upgrade to Pro
+                  Support Us
                 </Button>
               </CardContent>
             </Card>
