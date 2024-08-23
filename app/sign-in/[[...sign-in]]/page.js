@@ -9,11 +9,12 @@ import {
 } from "@mui/material";
 import { SignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
+import "../globals.css";
 
 export default function SignUpPage() {
   // ... (component body)
   return (
-    <Box>
+    <Box className="responsive-font-size responsive-padding">
       <AppBar
         position="static"
         sx={{

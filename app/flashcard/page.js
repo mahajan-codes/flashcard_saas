@@ -13,6 +13,7 @@ import {
 import { collection, doc, getDocs } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
 import { db } from "../../firebase.js";
+import "../globals.css";
 // Import your Firebase setup here
 // This component uses Clerk’s `useUser` hook for authentication, React’s `useState`
 // for managing the flashcardsand their flip states
@@ -55,7 +56,10 @@ export default function Flashcard() {
   // Each flashcard is displayed as a card that flips when clicked, revealing the back of the card.
   // The flip animation is achieved using CSS transforms and transitions.
   return (
-    <Container maxWidth="md">
+    <Container
+      maxWidth="md"
+      className="responsive-font-size responsive-padding"
+    >
       <Grid container spacing={3} sx={{ mt: 4 }}>
         {flashcards.map((flashcard) => (
           <Grid item xs={12} sm={6} md={4} key={flashcard.id}>

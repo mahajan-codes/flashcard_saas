@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Typography, Box, Container, CircularProgress } from "@mui/material";
+import "../globals.css";
 // This section sets up the component, initializing state variables for loading, session data, and potential errors.
 //  It also extracts the `session_id` from the URL parameters.
 const ResultPage = () => {
@@ -57,7 +58,11 @@ const ResultPage = () => {
     );
   }
   return (
-    <Container maxWidth="sm" sx={{ textAlign: "center", mt: 4 }}>
+    <Container
+      className="responsive-font-size responsive-padding"
+      maxWidth="sm"
+      sx={{ textAlign: "center", mt: 4 }}
+    >
       {session.payment_status === "paid" ? (
         <>
           <Typography variant="h4">Thank you for your purchase!</Typography>

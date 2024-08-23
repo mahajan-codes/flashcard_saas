@@ -117,7 +117,7 @@ export default function Generate() {
   };
 
   return (
-    <Box>
+    <Box className="responsive-font-size responsive-padding">
       {/* Header and Navbar */}
       <AppBar
         position="static"

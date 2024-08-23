@@ -7,7 +7,7 @@ import {
   CardActionArea,
   CardContent,
 } from "@mui/material";
-
+import "../globals.css";
 // This flashcards page is responsible for fetching and displaying all of the user’s saved flashcard sets
 
 export default function Flashcard() {
@@ -38,7 +38,10 @@ export default function Flashcard() {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container
+      maxWidth="md"
+      className="responsive-font-size responsive-padding"
+    >
       <Grid container spacing={3} sx={{ mt: 4 }}>
         {flashcards.map((flashcard, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>

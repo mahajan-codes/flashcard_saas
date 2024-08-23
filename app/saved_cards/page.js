@@ -16,6 +16,7 @@ import {
 import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
+import "../globals.css";
 
 export default function Flashcard() {
   const [savedFlashcardSets, setSavedFlashcardSets] = useState([]);
@@ -91,7 +92,7 @@ export default function Flashcard() {
   };
 
   return (
-    <Box>
+    <Box className="responsive-font-size responsive-padding">
       <AppBar
         position="static"
         sx={{

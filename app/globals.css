@@ -49,7 +49,37 @@ body {
   background: linear-gradient(to right, #2f4454, #2e151b);
   color: var(--text-color-primary);
 }
+.responsive-font-size {
+  font-size: 14px; /* Default size */
+}
 
+@media (min-width: 600px) {
+  .responsive-font-size {
+    font-size: 16px; /* Small screens */
+  }
+}
+
+@media (min-width: 960px) {
+  .responsive-font-size {
+    font-size: 18px; /* Medium screens */
+  }
+}
+
+.responsive-padding {
+  padding: 6px 12px; /* Default padding */
+}
+
+@media (min-width: 600px) {
+  .responsive-padding {
+    padding: 8px 16px; /* Small screens */
+  }
+}
+
+@media (min-width: 960px) {
+  .responsive-padding {
+    padding: 10px 20px; /* Medium screens */
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
