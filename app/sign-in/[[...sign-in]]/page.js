@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import { SignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
+import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 
 export default function SignUpPage() {
   // ... (component body)
@@ -17,7 +17,7 @@ export default function SignUpPage() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#1B1B1B",
+          backgroundColor: "#376E6F",
         }}
       >
         <Toolbar
