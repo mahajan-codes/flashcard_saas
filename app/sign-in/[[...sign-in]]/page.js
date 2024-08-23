@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { SignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
-import "../globals.css";
+import "../../globals.css";
 
 export default function SignUpPage() {
   // ... (component body)
