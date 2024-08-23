@@ -78,6 +78,7 @@ export default function Generate() {
   };
 
   const handleSubmit = async () => {
+    setFlippedCards({});
     // It checks if the input text is empty and shows an alert if it is.
     if (!text.trim()) {
       alert("Please enter some text to generate flashcards.");
@@ -100,6 +101,7 @@ export default function Generate() {
 
       const data = await response.json();
       setFlashcards(data);
+      setFlippedCards({});
       setLoading(false);
       setFlashcardsGenerated(true);
     } catch (error) {
@@ -340,8 +342,8 @@ export default function Generate() {
                             }}
                           >
                             {flippedCards[index]
-                              ? flashcard.front
-                              : flashcard.back}
+                              ? flashcard.back
+                              : flashcard.front}
                           </Typography>
                         </CardContent>
                       </Card>
