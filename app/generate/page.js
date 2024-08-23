@@ -340,8 +340,8 @@ export default function Generate() {
                             }}
                           >
                             {flippedCards[index]
-                              ? flashcard.back
-                              : flashcard.front}
+                              ? flashcard.front
+                              : flashcard.back}
                           </Typography>
                         </CardContent>
                       </Card>

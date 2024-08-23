@@ -331,7 +331,7 @@ export default function Flashcard() {
                           // p: 10,
                         }}
                       >
-                        {flippedCards[index] ? flashcard.back : flashcard.front}
+                        {flippedCards[index] ? flashcard.front : flashcard.back}
                       </Typography>
                     </CardContent>
                   </Card>

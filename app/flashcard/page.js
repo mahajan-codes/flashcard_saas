@@ -72,12 +72,12 @@ export default function Flashcard() {
                     <div>
                       <div>
                         <Typography variant="h5" component="div">
-                          {flashcard.front}
+                          {flashcard.back}
                         </Typography>
                       </div>
                       <div>
                         <Typography variant="h5" component="div">
-                          {flashcard.back}
+                          {flashcard.front}
                         </Typography>
                       </div>
                     </div>
