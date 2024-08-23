@@ -130,7 +130,20 @@ export default function SignUpPage() {
         alignItems="center"
         sx={{ textAlign: "center", my: 4 }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography
+          variant="h4"
+          component="h2"
+          alignContent={"center"}
+          marginBottom={"30px"}
+          gutterBottom
+          sx={{
+            alignItems: "center",
+            fontFamily: `'Fredericka the Great', cursive`,
+            fontWeight: "400",
+            fontStyle: "normal",
+            textShadow: "6px 6px 6px var(--text-color-secondary)",
+          }}
+        >
           Sign In
         </Typography>
         <SignIn />

@@ -24,6 +24,7 @@ import { UserButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import { collection, doc, getDoc, writeBatch } from "firebase/firestore";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 import "../globals.css";
+
 export default function Generate() {
   const [text, setText] = useState("");
   const [flashcards, setFlashcards] = useState([]);
