@@ -17,6 +17,7 @@ import {
   DialogContent,
   Card,
   CardContent,
+  CircularProgress,
 } from "@mui/material";
 import { db } from "../../firebase";
 import { UserButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
@@ -28,6 +29,7 @@ export default function Generate() {
   const [flashcards, setFlashcards] = useState([]);
   const [setName, setSetName] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { user } = useUser();
 
   const [flashcardsGenerated, setFlashcardsGenerated] = useState(false);
@@ -80,7 +82,7 @@ export default function Generate() {
       alert("Please enter some text to generate flashcards.");
       return;
     }
-
+    setLoading(true);
     try {
       // send a POST request to our `/api/generate` endpoint with the input text.
       const response = await fetch("/api/generate", {
@@ -97,6 +99,7 @@ export default function Generate() {
 
       const data = await response.json();
       setFlashcards(data);
+      setLoading(false);
       setFlashcardsGenerated(true);
     } catch (error) {
       console.error("Error generating flashcards:", error);
@@ -224,7 +227,6 @@ export default function Generate() {
           sx={{
             border: "4px solid #f89090",
             my: 4, // a margin of 32px (4 * 8px) on both the top and bottom of the component
-            // width: "1200px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -267,85 +269,98 @@ export default function Generate() {
             Generate Flashcards
           </Button>
         </Box>
-        {/* Flashcard display that has a grid of cards, each representing a flashcard with its front and back content*/}
-        {flashcards.length > 0 && (
-          <Box sx={{ mt: 4 }}>
-            <Typography
-              variant="h5"
-              component="h2"
-              alignContent={"center"}
-              gutterBottom
-            >
-              Generated Flashcards
-            </Typography>
-            <Grid container spacing={2}>
-              {flashcards.map((flashcard, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Card
-                    sx={{
-                      height: "250px", // Set a fixed height
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      transformStyle: "preserve-3d",
-                      transform: flippedCards[index]
-                        ? "perspective(1000px) rotateY(360deg)"
-                        : "perspective(1000px) rotateY(0deg)",
-                      cursor: "pointer", // indicates the card is clickable
-                      transition: "transform 0.8s ease-in-out",
-                      border: "4px solid #f89090",
-                      backgroundColor: flippedCards[index]
-                        ? "#676767"
-                        : "#fafafa", // Change the background color based on the flip state
-                      color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
-                    }}
-                    onClick={() => handleCardClick(index)}
-                  >
-                    <CardContent
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center", // Center horizontally within the CardContent
-                        alignItems: "center", // Center vertically within the CardContent
-                        height: "100%", // Full height to center vertically
-                        padding: 2,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "20px",
-                          fontWeight: flippedCards[index] ? "normal" : "bold",
-                          // p: 10,
-                        }}
-                      >
-                        {flippedCards[index] ? flashcard.back : flashcard.front}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
+        {loading ? (
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <CircularProgress />
           </Box>
+        ) : (
+          <>
+            {/* Flashcard display that has a grid of cards, each representing a flashcard with its front and back content*/}
+            {flashcards.length > 0 && (
+              <Box sx={{ mt: 4 }}>
+                <Typography
+                  variant="h5"
+                  component="h2"
+                  alignContent={"center"}
+                  gutterBottom
+                >
+                  Generated Flashcards
+                </Typography>
+                <Grid container spacing={2}>
+                  {flashcards.map((flashcard, index) => (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                      <Card
+                        sx={{
+                          height: "250px", // Set a fixed height
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          transformStyle: "preserve-3d",
+                          transform: flippedCards[index]
+                            ? "perspective(1000px) rotateY(360deg)"
+                            : "perspective(1000px) rotateY(0deg)",
+                          cursor: "pointer", // indicates the card is clickable
+                          transition: "transform 0.8s ease-in-out",
+                          border: "4px solid #f89090",
+                          backgroundColor: flippedCards[index]
+                            ? "#676767"
+                            : "#fafafa", // Change the background color based on the flip state
+                          color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
+                        }}
+                        onClick={() => handleCardClick(index)}
+                      >
+                        <CardContent
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center", // Center horizontally within the CardContent
+                            alignItems: "center", // Center vertically within the CardContent
+                            height: "100%", // Full height to center vertically
+                            padding: 2,
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontSize: "20px",
+                              fontWeight: flippedCards[index]
+                                ? "normal"
+                                : "bold",
+                              // p: 10,
+                            }}
+                          >
+                            {flippedCards[index]
+                              ? flashcard.back
+                              : flashcard.front}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            )}
+
+            {/* Save flashcard button */}
+            {flashcards.length > 0 && (
+              <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+                <Button
+                  variant="contained"
+                  onClick={handleOpenDialog}
+                  sx={{
+                    border: "4px solid #f89090",
+                    backgroundColor: "#676767", // Custom background color
+                    color: "#FFFFFF", // Custom text color
+                    "&:hover": {
+                      backgroundColor: "#f89090", // Custom hover background color
+                    },
+                  }}
+                >
+                  Save Flashcards
+                </Button>
+              </Box>
+            )}
+          </>
         )}
 
-        {/* Save flashcard button */}
-        {flashcards.length > 0 && (
-          <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
-            <Button
-              variant="contained"
-              onClick={handleOpenDialog}
-              sx={{
-                border: "4px solid #f89090",
-                backgroundColor: "#676767", // Custom background color
-                color: "#FFFFFF", // Custom text color
-                "&:hover": {
-                  backgroundColor: "#f89090", // Custom hover background color
-                },
-              }}
-            >
-              Save Flashcards
-            </Button>
-          </Box>
-        )}
         {/* dialog component for naming and saving the flashcard set: */}
         <Dialog open={dialogOpen} onClose={handleCloseDialog}>
           <DialogTitle>Save Flashcard Set</DialogTitle>
