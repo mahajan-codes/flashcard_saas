@@ -246,11 +246,10 @@ export default function Generate() {
           <TextField
             label="Enter your text here..."
             variant="outlined"
-            fullWidth
             value={text}
             multiline
             rows={4}
-            sx={{ my: 2, width: "1000px" }}
+            sx={{ my: 2, width: "100%" }}
             onChange={(e) => setText(e.target.value)}
             InputProps={{
               style: { color: "#FFFFFF", backgroundColor: "#333" }, // Darker input field
