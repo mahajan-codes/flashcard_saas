@@ -23,7 +23,7 @@ import { db } from "../../firebase";
 import { UserButton, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import { collection, doc, getDoc, writeBatch } from "firebase/firestore";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
-
+import "../globals.css";
 export default function Generate() {
   const [text, setText] = useState("");
   const [flashcards, setFlashcards] = useState([]);
@@ -119,7 +119,7 @@ export default function Generate() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#1B1B1B",
+          backgroundColor: "#376E6F",
         }}
       >
         <Toolbar
@@ -138,7 +138,7 @@ export default function Generate() {
             }}
             href="/"
           >
-            <LibraryBookIcon sx={{ color: "#FFFFFF", fontSize: 32 }} />
+            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
           </Button>
           <Typography
             variant={"h4"}
@@ -156,11 +156,12 @@ export default function Generate() {
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-in"
@@ -171,11 +172,12 @@ export default function Generate() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-up"
@@ -190,11 +192,12 @@ export default function Generate() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/generate"
@@ -205,11 +208,12 @@ export default function Generate() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/saved_cards"
@@ -256,13 +260,12 @@ export default function Generate() {
             variant="contained"
             onClick={handleSubmit}
             sx={{
-              mb: 4,
-              border: "4px solid #f89090",
-              width: "1000px",
-              backgroundColor: "#676767", // Custom background color
-              color: "#FFFFFF", // Custom text color
+              border: "4px solid #DA7B93",
+              backgroundColor: "#2F4454",
+              color: "#fffff",
+              fontWeight: 500,
               "&:hover": {
-                backgroundColor: "#f89090", // Custom hover background color
+                backgroundColor: "#DA7B93",
               },
             }}
           >
@@ -279,10 +282,18 @@ export default function Generate() {
             {flashcards.length > 0 && (
               <Box sx={{ mt: 4 }}>
                 <Typography
-                  variant="h5"
+                  variant="h4"
                   component="h2"
                   alignContent={"center"}
+                  marginBottom={"30px"}
                   gutterBottom
+                  sx={{
+                    alignItems: "center",
+                    fontFamily: `'Fredericka the Great', cursive`,
+                    fontWeight: "400",
+                    fontStyle: "normal",
+                    textShadow: "6px 6px 6px var(--text-color-secondary)",
+                  }}
                 >
                   Generated Flashcards
                 </Typography>
@@ -346,11 +357,12 @@ export default function Generate() {
                   variant="contained"
                   onClick={handleOpenDialog}
                   sx={{
-                    border: "4px solid #f89090",
-                    backgroundColor: "#676767", // Custom background color
-                    color: "#FFFFFF", // Custom text color
+                    border: "4px solid #DA7B93",
+                    backgroundColor: "#2F4454",
+                    color: "#fffff",
+                    fontWeight: 500,
                     "&:hover": {
-                      backgroundColor: "#f89090", // Custom hover background color
+                      backgroundColor: "#DA7B93",
                     },
                   }}
                 >

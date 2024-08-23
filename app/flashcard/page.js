@@ -40,7 +40,7 @@ export default function Flashcard() {
       if (!search || !user) return;
       // Construct a reference to the Firestore collection where the flashcards are stored
       const colRef = collection(doc(collection(db, "users"), user.id), search);
-      // Retrieve all documents from the collection reference
+      // Retrieve all documents from the collection reference, and push them to flashcards array
       const docs = await getDocs(colRef);
       const flashcards = [];
       docs.forEach((doc) => {

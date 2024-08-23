@@ -95,7 +95,7 @@ export default function Flashcard() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#1B1B1B",
+          backgroundColor: "#376E6F",
         }}
       >
         <Toolbar
@@ -114,7 +114,7 @@ export default function Flashcard() {
             }}
             href="/"
           >
-            <LibraryBookIcon sx={{ color: "#FFFFFF", fontSize: 32 }} />
+            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
           </Button>
           <Typography
             variant={"h4"}
@@ -132,11 +132,12 @@ export default function Flashcard() {
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-in"
@@ -147,11 +148,12 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-up"
@@ -166,11 +168,12 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/generate"
@@ -181,11 +184,12 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/saved_cards"
@@ -220,7 +224,7 @@ export default function Flashcard() {
                 fontFamily: `'Fredericka the Great', cursive`,
                 fontWeight: "400",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px #f89090",
+                textShadow: "6px 6px 6px var(--text-color-secondary)",
               }}
             >
               Your Saved Card Sets
@@ -283,7 +287,7 @@ export default function Flashcard() {
                 fontFamily: `'Fredericka the Great', cursive`,
                 fontWeight: "400",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px #f89090",
+                textShadow: "6px 6px 6px var(--text-color-secondary)",
               }}
             >
               Flashcards in {selectedCardSet}

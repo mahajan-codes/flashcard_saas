@@ -20,20 +20,46 @@ export default function SignUpPage() {
           backgroundColor: "#1B1B1B",
         }}
       >
-        <Toolbar>
-          <Typography variant={"h4"} color={"#fff"} sx={{ flexGrow: 1 }}>
-            Flashcard Generator
+        <Toolbar
+          sx={{
+            justifyContent: "space-between",
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          <Button
+            sx={{
+              gap: 2,
+              "&:hover": {
+                backgroundColor: "#f89090", // Custom hover background color
+              },
+            }}
+            href="/"
+          >
+            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
+          </Button>
+          <Typography
+            variant={"h4"}
+            color={"#FFFFFF"}
+            sx={{
+              flexGrow: 1,
+              fontFamily: `'Fredericka the Great', cursive`,
+              fontWeight: "200",
+            }}
+          >
+            Study Stash
           </Typography>
           <SignedOut>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-in"
@@ -44,11 +70,12 @@ export default function SignUpPage() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-up"
@@ -58,7 +85,41 @@ export default function SignUpPage() {
             </Box>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
+                  "&:hover": {
+                    backgroundColor: "#DA7B93",
+                  },
+                }}
+                href="/generate"
+              >
+                Generate
+              </Button>
+              <Button
+                color="inherit"
+                variant="contained"
+                sx={{
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffff",
+                  fontWeight: 500,
+                  "&:hover": {
+                    backgroundColor: "#DA7B93",
+                  },
+                }}
+                href="/saved_cards"
+              >
+                Saved Cards
+              </Button>
+              <UserButton />
+            </Box>
           </SignedIn>
         </Toolbar>
       </AppBar>

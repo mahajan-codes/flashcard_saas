@@ -18,7 +18,7 @@ export async function POST(req) {
   try {
     const openai = new OpenAI({
       baseURL: "https://openrouter.ai/api/v1",
-      apiKey: process.env.OPENROUTER_API_KEY, // Use process.env to access environment variables securely
+      apiKey: process.env.NEXT_PUBLIC_OPENROUTER_API_KEY, // Use process.env to access environment variables securely
       defaultHeaders: {
         "HTTP-Referer": "http://localhost:3000/", // for including your app on openrouter.ai rankings.
         "X-Title": "Flash_card Bot", // Shows in rankings on openrouter.ai.

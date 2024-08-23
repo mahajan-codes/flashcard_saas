@@ -19,7 +19,7 @@ import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 import CreateIcon from "@mui/icons-material/Create";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
-
+import "./globals.css";
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
   const { isSignedIn } = useAuth();
@@ -47,7 +47,7 @@ export default function Home() {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#1B1B1B",
+          backgroundColor: "#376E6F",
         }}
       >
         <Toolbar
@@ -66,7 +66,7 @@ export default function Home() {
             }}
             href="/"
           >
-            <LibraryBookIcon sx={{ color: "#FFFFFF", fontSize: 32 }} />
+            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
           </Button>
           <Typography
             variant={"h4"}
@@ -84,11 +84,12 @@ export default function Home() {
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-in"
@@ -99,11 +100,12 @@ export default function Home() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767", // Custom background color
-                  color: "#FFFFFF", // Custom text color
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090", // Custom hover background color
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/sign-up"
@@ -118,11 +120,12 @@ export default function Home() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/generate"
@@ -133,11 +136,12 @@ export default function Home() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #f89090",
-                  backgroundColor: "#676767",
-                  color: "#FFFFFF",
+                  border: "4px solid #DA7B93",
+                  backgroundColor: "#2F4454",
+                  color: "#fffffff",
+                  fontWeight: 500,
                   "&:hover": {
-                    backgroundColor: "#f89090",
+                    backgroundColor: "#DA7B93",
                   },
                 }}
                 href="/saved_cards"
@@ -168,7 +172,8 @@ export default function Home() {
             fontFamily: `'Fredericka the Great', cursive`,
             fontWeight: "400",
             fontStyle: "normal",
-            textShadow: "6px 6px 6px #f89090",
+            textShadow: "6px 6px 6px var(--text-color-secondary)",
+            color: "#ffffff",
           }}
         >
           Boost Your Learning, One Flashcard at a Time
@@ -180,7 +185,7 @@ export default function Home() {
           sx={{
             fontFamily: `Great Vibes, cursive`,
             fontWeight: 400,
-            textShadow: "6px 6px 6px #f89090",
+            textShadow: "6px 6px 6px var(--text-color-secondary)",
           }}
         >
           The easiest way to create flashcards from your text.
@@ -188,12 +193,12 @@ export default function Home() {
         <Button
           variant="contained"
           sx={{
-            width: "200px",
-            border: "4px solid #f89090",
-            backgroundColor: "#676767", // Custom background color
-            color: "#FFFFFF", // Custom text color
+            border: "4px solid #DA7B93",
+            backgroundColor: "#2F4454",
+            color: "#fffffff",
+            fontWeight: 500,
             "&:hover": {
-              backgroundColor: "#f89090", // Custom hover background color
+              backgroundColor: "#DA7B93",
             },
           }}
           href={href}
@@ -220,7 +225,7 @@ export default function Home() {
             sx={{
               fontFamily: `Great Vibes, cursive`,
               fontWeight: 400,
-              textShadow: "6px 6px 6px #f89090",
+              textShadow: "6px 6px 6px var(--text-color-secondary)",
             }}
           >
             Features
@@ -232,53 +237,64 @@ export default function Home() {
           justifyContent="center"
           alignItems="center" // Center items vertically within the grid
           style={{
-            backgroundColor: "#000",
+            // backgroundColor: "#1C3334", // Dark Gray for Background
             padding: "20px",
+            // paddingLeft: "40px",
+            my: "20px",
+            marginLeft: "20px",
+            marginRight: "20px",
             borderRadius: "8px",
           }}
         >
           <Grid item xs={12} sm={6} md={4}>
-            <CreateIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <CreateIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />{" "}
+            {/* White for Icons */}
             <Typography
               variant="h6"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 400 }}
+              sx={{ fontWeight: 400, color: "#DA7B93" }} // Light Pink for Heading
             >
               AI-Powered Flashcard Generation
             </Typography>
-            <Typography color={"white"}>
+            <Typography color={"#FFFFFF"}>
+              {" "}
+              {/* White for Body Text */}
               Automatically generate flashcards from the text you provide.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <BookmarkIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <BookmarkIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />{" "}
+            {/* White for Icons */}
             <Typography
               variant="h6"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 400 }}
+              sx={{ fontWeight: 400, color: "#DA7B93" }} // Light Pink for Heading
             >
               Saved Flashcard Sets
             </Typography>
-            <Typography color={"white"}>
+            <Typography color={"#FFFFFF"}>
+              {" "}
+              {/* White for Body Text */}
               Easily save and access your flashcard sets for future study
               sessions
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <FolderOpenIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />
+            <FolderOpenIcon sx={{ color: "#FFFFFF", fontSize: 50 }} />{" "}
+            {/* White for Icons */}
             <Typography
               variant="h6"
               component="h2"
               gutterBottom
-              sx={{
-                fontWeight: 400,
-              }}
+              sx={{ fontWeight: 400, color: "#DA7B93" }} // Light Pink for Heading
             >
               Interactive Learning
             </Typography>
-            <Typography color={"white"}>
+            <Typography color={"#FFFFFF"}>
+              {" "}
+              {/* White for Body Text */}
               Engage with your material through interactive flashcards designed
               to enhance your study experience.
             </Typography>
@@ -303,7 +319,7 @@ export default function Home() {
             sx={{
               fontFamily: `Great Vibes, cursive`,
               fontWeight: 400,
-              textShadow: "6px 6px 6px #f89090",
+              textShadow: "6px 6px 6px var(--text-color-secondary)",
             }}
           >
             Pricing
@@ -317,7 +333,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                backgroundColor: "#333", // Dark background color for the card
+                backgroundColor: "#2F4454", // Deep Blue-Grey Background
               }}
             >
               <CardContent sx={{ textAlign: "center", padding: 6 }}>
@@ -327,7 +343,7 @@ export default function Home() {
                     component="div"
                     sx={{
                       fontWeight: "bold",
-                      color: "#fff",
+                      color: "#DA7B93", // Soft Pink for Title
                       fontFamily: `'Fredericka the Great', cursive`,
                       fontWeight: "400",
                       fontStyle: "normal",
@@ -339,7 +355,7 @@ export default function Home() {
                 <Typography
                   variant="h3"
                   component="div"
-                  sx={{ fontWeight: "bold", color: "#f89090" }}
+                  sx={{ fontWeight: "bold", color: "#DA7B93" }} // Soft Pink for Price
                 >
                   $0
                 </Typography>
@@ -347,7 +363,7 @@ export default function Home() {
                   <Typography
                     variant="h7"
                     component="div"
-                    sx={{ color: "#c4c0c0" }}
+                    sx={{ color: "#c4c0c0" }} // Light Grey for Description
                   >
                     Get started with essential features at no cost. Enhance your
                     study experiences with flashcards created by our artificial
@@ -371,7 +387,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                backgroundColor: "#333", // Dark background color for the card
+                backgroundColor: "#2F4454", // Deep Blue-Grey Background
               }}
             >
               <CardContent sx={{ textAlign: "center", padding: 6 }}>
@@ -381,7 +397,7 @@ export default function Home() {
                     component="div"
                     sx={{
                       fontWeight: "bold",
-                      color: "#fff",
+                      color: "#DA7B93", // Soft Pink for Title
                       fontFamily: `'Fredericka the Great', cursive`,
                       fontWeight: "400",
                       fontStyle: "normal",
@@ -393,7 +409,7 @@ export default function Home() {
                 <Typography
                   variant="h3"
                   component="div"
-                  sx={{ fontWeight: "bold", color: "#f89090" }}
+                  sx={{ fontWeight: "bold", color: "#DA7B93" }}
                 >
                   $0.99
                 </Typography>
@@ -417,11 +433,12 @@ export default function Home() {
                 <Button
                   variant="contained"
                   sx={{
-                    border: "4px solid #f89090",
-                    backgroundColor: "#676767", // Custom background color
-                    color: "#FFFFFF", // Custom text color
+                    border: "4px solid #DA7B93",
+                    backgroundColor: "#2F4454",
+                    color: "#fffffff",
+                    fontWeight: 500,
                     "&:hover": {
-                      backgroundColor: "#f89090", // Custom hover background color
+                      backgroundColor: "#DA7B93",
                     },
                   }}
                   onClick={handleSubmit}
