@@ -75,7 +75,7 @@ export default function Home() {
               color={"#FFFFFF"}
               sx={{
                 flexGrow: 1,
-                fontFamily: `'Fredericka the Great', cursive`,
+                fontFamily: `'Mont Hairline', italic`,
                 fontWeight: "200",
               }}
             >
@@ -171,7 +171,7 @@ export default function Home() {
             component="h1"
             gutterBottom
             sx={{
-              fontFamily: `'Fredericka the Great', cursive`,
+              fontFamily: `'Mont Hairline', italic`,
               fontWeight: "400",
               fontStyle: "normal",
               textShadow: "6px 6px 6px var(--text-color-secondary)",
@@ -185,7 +185,7 @@ export default function Home() {
             component="h2"
             gutterBottom
             sx={{
-              fontFamily: `Great Vibes, cursive`,
+              fontFamily: `'Mont Hairline', italic`,
               fontWeight: 400,
               textShadow: "6px 6px 6px var(--text-color-secondary)",
             }}
@@ -225,7 +225,7 @@ export default function Home() {
               component="h2"
               gutterBottom
               sx={{
-                fontFamily: `Great Vibes, cursive`,
+                fontFamily: `'Mont Hairline', italic`,
                 fontWeight: 400,
                 textShadow: "6px 6px 6px var(--text-color-secondary)",
               }}
@@ -319,7 +319,7 @@ export default function Home() {
               component="h2"
               gutterBottom
               sx={{
-                fontFamily: `Great Vibes, cursive`,
+                fontFamily: `'Mont Hairline', italic`,
                 fontWeight: 400,
                 textShadow: "6px 6px 6px var(--text-color-secondary)",
               }}
@@ -346,7 +346,7 @@ export default function Home() {
                       sx={{
                         fontWeight: "bold",
                         color: "#DA7B93", // Soft Pink for Title
-                        fontFamily: `'Fredericka the Great', cursive`,
+                        fontFamily: `'Mont Hairline', italic`,
                         fontWeight: "400",
                         fontStyle: "normal",
                       }}
@@ -400,7 +400,7 @@ export default function Home() {
                       sx={{
                         fontWeight: "bold",
                         color: "#DA7B93", // Soft Pink for Title
-                        fontFamily: `'Fredericka the Great', cursive`,
+                        fontFamily: `'Mont Hairline', italic`,
                         fontWeight: "400",
                         fontStyle: "normal",
                       }}
