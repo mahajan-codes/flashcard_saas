@@ -85,7 +85,7 @@ export default function Home() {
             sx={{
               flexGrow: 1,
               fontFamily: `'Mont Hairline', italic`,
-              fontWeight: "200",
+              fontWeight: "800",
             }}
           >
             Study Stash
@@ -180,7 +180,7 @@ export default function Home() {
         gutterBottom
         sx={{
           fontFamily: `'Mont Hairline', italic`,
-          fontWeight: "400",
+          fontWeight: "600",
           fontStyle: "normal",
           textShadow: "6px 6px 6px #0000",
           color: "black",
@@ -196,7 +196,7 @@ export default function Home() {
         gutterBottom
         sx={{
           fontFamily: `'Mont Hairline', italic`,
-          fontWeight: "400",
+          fontWeight: "500",
           fontStyle: "normal",
           textShadow: "6px 6px 6px #0000",
           color: "black",
