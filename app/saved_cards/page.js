@@ -16,7 +16,6 @@ import {
 import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
-import "../globals.css";
 
 export default function Flashcard() {
   const [savedFlashcardSets, setSavedFlashcardSets] = useState([]);
@@ -92,11 +91,19 @@ export default function Flashcard() {
   };
 
   return (
-    <Box className="responsive-font-size responsive-padding">
+    <Box
+      sx={{
+      my: 0,
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: "#d9dde8",
+      
+    }}>
+
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#376E6F",
+          backgroundColor: "#d9dde8",
         }}
       >
         <Toolbar
@@ -115,14 +122,14 @@ export default function Flashcard() {
             }}
             href="/"
           >
-            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
+            <LibraryBookIcon sx={{ color: "#000", fontSize: 32 }} />
           </Button>
           <Typography
             variant={"h4"}
-            color={"#FFFFFF"}
+            color={"#000"}
             sx={{
               flexGrow: 1,
-              fontFamily: `'Fredericka the Great', cursive`,
+              fontFamily: `'Mont Hairline', italic`,
               fontWeight: "200",
             }}
           >
@@ -133,12 +140,11 @@ export default function Flashcard() {
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff",
+                  color: "#FFFFFF",
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff",
                   },
                 }}
                 href="/sign-in"
@@ -149,12 +155,11 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff",
+                  color: "#FFFFFF",
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff",
                   },
                 }}
                 href="/sign-up"
@@ -169,12 +174,11 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff",
+                  color: "#FFFFFF",
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff",
                   },
                 }}
                 href="/generate"
@@ -185,12 +189,11 @@ export default function Flashcard() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff",
+                  color: "#FFFFFF",
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff",
                   },
                 }}
                 href="/saved_cards"
@@ -225,7 +228,7 @@ export default function Flashcard() {
                 fontFamily: `'Fredericka the Great', cursive`,
                 fontWeight: "400",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px var(--text-color-secondary)",
+                textShadow: "6px 6px 6px #f89090",
               }}
             >
               Your Saved Card Sets
@@ -235,7 +238,7 @@ export default function Flashcard() {
                 <CircularProgress />
               </Box>
             ) : (
-              <Grid container spacing={2}>
+              <Grid container spacing={0}>
                 {savedFlashcardSets.map((set) => {
                   return (
                     <Grid item xs={12} sm={6} md={4} key={set.id}>
@@ -248,6 +251,7 @@ export default function Flashcard() {
                           cursor: "pointer",
                           border: "4px solid #f89090",
                           backgroundColor: "#fafafa",
+                          
                         }}
                         onClick={() => handleSetClick(set.id)}
                       >
@@ -277,6 +281,7 @@ export default function Flashcard() {
               flexDirection: "column",
               justifyContent: "center",
               gap: 4,
+              
             }}
           >
             <Typography
@@ -288,7 +293,7 @@ export default function Flashcard() {
                 fontFamily: `'Fredericka the Great', cursive`,
                 fontWeight: "400",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px var(--text-color-secondary)",
+                textShadow: "6px 6px 6px #f89090",
               }}
             >
               Flashcards in {selectedCardSet}
@@ -313,6 +318,7 @@ export default function Flashcard() {
                         ? "#676767"
                         : "#fafafa", // Change the background color based on the flip state
                       color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
+                      
                     }}
                     onClick={() => handleCardClick(index)}
                   >
@@ -329,10 +335,10 @@ export default function Flashcard() {
                         sx={{
                           fontSize: "20px",
                           fontWeight: flippedCards[index] ? "normal" : "bold",
-                          // p: 10,
+                          //p: 100,
                         }}
                       >
-                        {flippedCards[index] ? flashcard.front : flashcard.back}
+                        {flippedCards[index] ? flashcard.back : flashcard.front}
                       </Typography>
                     </CardContent>
                   </Card>
