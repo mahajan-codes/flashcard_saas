@@ -93,10 +93,11 @@ export default function Flashcard() {
   return (
     <Box
       sx={{
-      my: 0,
+      my: (-1),
       display: "flex",
       flexDirection: "column",
       backgroundColor: "#d9dde8",
+    
       
     }}>
 
@@ -130,7 +131,7 @@ export default function Flashcard() {
             sx={{
               flexGrow: 1,
               fontFamily: `'Mont Hairline', italic`,
-              fontWeight: "200",
+              fontWeight: "800",
             }}
           >
             Study Stash
@@ -225,10 +226,11 @@ export default function Flashcard() {
               gutterBottom
               sx={{
                 alignItems: "center",
-                fontFamily: `'Fredericka the Great', cursive`,
-                fontWeight: "400",
+                fontFamily: `'Mont Hairline', italic`,
+                fontWeight: "600",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px #f89090",
+                textShadow: "6px 6px 6px #d9dde8",
+                color: "black",
               }}
             >
               Your Saved Card Sets
@@ -249,8 +251,8 @@ export default function Flashcard() {
                           justifyContent: "center",
                           height: "250px",
                           cursor: "pointer",
-                          border: "4px solid #f89090",
-                          backgroundColor: "#fafafa",
+                          border: "4px solid #000",
+                          backgroundColor: "#d9dde8",
                           
                         }}
                         onClick={() => handleSetClick(set.id)}
@@ -290,10 +292,11 @@ export default function Flashcard() {
               alignContent="center"
               gutterBottom
               sx={{
-                fontFamily: `'Fredericka the Great', cursive`,
-                fontWeight: "400",
+                fontFamily: `'Mont Hairline', italic`,
+                fontWeight: "600",
                 fontStyle: "normal",
-                textShadow: "6px 6px 6px #f89090",
+                textShadow: "6px 6px 6px #d9dde8",
+                color: "black",
               }}
             >
               Flashcards in {selectedCardSet}
@@ -313,10 +316,10 @@ export default function Flashcard() {
                         : "perspective(1000px) rotateY(0deg)",
                       cursor: "pointer", // indicates the card is clickable
                       transition: "transform 0.8s ease-in-out",
-                      border: "4px solid #f89090",
+                      border: "4px solid #000",
                       backgroundColor: flippedCards[index]
-                        ? "#676767"
-                        : "#fafafa", // Change the background color based on the flip state
+                        ? "#d9dde8"
+                        : "#d9dde8", // Change the background color based on the flip state
                       color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
                       
                     }}
@@ -329,6 +332,8 @@ export default function Flashcard() {
                         alignItems: "center", // Center vertically within the CardContent
                         height: "100%", // Full height to center vertically
                         padding: 2,
+                        color: "black",
+                        fontWeight: "300",
                       }}
                     >
                       <Typography
