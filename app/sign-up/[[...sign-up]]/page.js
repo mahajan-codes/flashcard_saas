@@ -8,59 +8,38 @@ import {
   Button,
 } from "@mui/material";
 import { SignUp, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
-import "../../globals.css";
+import Link from "next/link";
 
 export default function SignUpPage() {
   // ... (component body)
   return (
-    <Box className="responsive-font-size responsive-padding">
+    <Box
+    sx={{
+      my: 0,
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: "#d9dde8",
+    }}>
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#376E6F",
+          backgroundColor: "#d9dde8",
         }}
       >
-        <Toolbar
-          sx={{
-            justifyContent: "space-between",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <Button
-            sx={{
-              gap: 2,
-              "&:hover": {
-                backgroundColor: "#f89090", // Custom hover background color
-              },
-            }}
-            href="/"
-          >
-            <LibraryBookIcon sx={{ color: "#2F4454", fontSize: 32 }} />
-          </Button>
-          <Typography
-            variant={"h4"}
-            color={"#FFFFFF"}
-            sx={{
-              flexGrow: 1,
-              fontFamily: `'Fredericka the Great', cursive`,
-              fontWeight: "200",
-            }}
-          >
-            Study Stash
+        <Toolbar>
+          <Typography variant={"h4"} color={"#000"} sx={{ flexGrow: 1 }}>
+            Flashcard Generator
           </Typography>
           <SignedOut>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <Button
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff", // Custom background color
+                  color: "#FFFFFF", // Custom text color
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff", // Custom hover background color
                   },
                 }}
                 href="/sign-in"
@@ -71,12 +50,11 @@ export default function SignUpPage() {
                 color="inherit"
                 variant="contained"
                 sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
+                  border: "4px solid #4255ff",
+                  backgroundColor: "#4255ff", // Custom background color
+                  color: "#FFFFFF", // Custom text color
                   "&:hover": {
-                    backgroundColor: "#DA7B93",
+                    backgroundColor: "#4255ff", // Custom hover background color
                   },
                 }}
                 href="/sign-up"
@@ -86,41 +64,7 @@ export default function SignUpPage() {
             </Box>
           </SignedOut>
           <SignedIn>
-            <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
-              <Button
-                color="inherit"
-                variant="contained"
-                sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
-                  "&:hover": {
-                    backgroundColor: "#DA7B93",
-                  },
-                }}
-                href="/generate"
-              >
-                Generate
-              </Button>
-              <Button
-                color="inherit"
-                variant="contained"
-                sx={{
-                  border: "4px solid #DA7B93",
-                  backgroundColor: "#2F4454",
-                  color: "#fffff",
-                  fontWeight: 500,
-                  "&:hover": {
-                    backgroundColor: "#DA7B93",
-                  },
-                }}
-                href="/saved_cards"
-              >
-                Saved Cards
-              </Button>
-              <UserButton />
-            </Box>
+            <UserButton />
           </SignedIn>
         </Toolbar>
       </AppBar>
@@ -129,22 +73,9 @@ export default function SignUpPage() {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        sx={{ textAlign: "center", my: 4 }}
+        sx={{ textAlign: "center", my: 4, color: "black"}}
       >
-        <Typography
-          variant="h4"
-          component="h2"
-          alignContent={"center"}
-          marginBottom={"30px"}
-          gutterBottom
-          sx={{
-            alignItems: "center",
-            fontFamily: `'Fredericka the Great', cursive`,
-            fontWeight: "400",
-            fontStyle: "normal",
-            textShadow: "6px 6px 6px var(--text-color-secondary)",
-          }}
-        >
+        <Typography variant="h4" component="h1" gutterBottom>
           Sign Up
         </Typography>
         <SignUp />
