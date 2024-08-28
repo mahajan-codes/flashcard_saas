@@ -28,7 +28,7 @@ export default function SignUpPage() {
         }}
       >
         <Toolbar>
-          <Typography variant={"h4"} color={"#000"} sx={{ flexGrow: 1}}>
+          <Typography variant={"h4"} color={"#000"} sx={{ flexGrow: 1, fontWeight: 800,}}>
             Flashcard Generator
           </Typography>
           <SignedOut>
