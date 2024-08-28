@@ -113,7 +113,7 @@ export default function Generate() {
   return (
     <Box
     sx={{
-      my: 0,
+      my: -1,
       display: "flex",
       flexDirection: "column",
       backgroundColor: "#d9dde8",
@@ -149,7 +149,7 @@ export default function Generate() {
             sx={{
               flexGrow: 1,
               fontFamily: `'Mont Hairline', italic`,
-              fontWeight: "200",
+              fontWeight: "800",
             }}
           >
             Study Stash
@@ -280,10 +280,12 @@ export default function Generate() {
             <Typography
               variant="h5"
               component="h2"
+              fontWeight="800"
+              color={"black"}
               alignContent={"center"}
               gutterBottom
             >
-              Generated Flashcards
+              Generated Flashcards:
             </Typography>
             <Grid container spacing={2}>
               {flashcards.map((flashcard, index) => (
@@ -300,11 +302,11 @@ export default function Generate() {
                         : "perspective(1000px) rotateY(0deg)",
                       cursor: "pointer", // indicates the card is clickable
                       transition: "transform 0.8s ease-in-out",
-                      border: "4px solid #f89090",
+                      border: "4px solid #000",
                       backgroundColor: flippedCards[index]
-                        ? "#676767"
-                        : "#fafafa", // Change the background color based on the flip state
-                      color: flippedCards[index] ? "#fafafa" : "#333", // Set text color
+                        ? "#d9dde8"
+                        : "#d9dde8", // Change the background color based on the flip state
+                      color: flippedCards[index] ? "#000" : "#333", // Set text color
                     }}
                     onClick={() => handleCardClick(index)}
                   >
@@ -341,11 +343,13 @@ export default function Generate() {
               variant="contained"
               onClick={handleOpenDialog}
               sx={{
-                border: "4px solid #f89090",
-                backgroundColor: "#676767", // Custom background color
-                color: "#FFFFFF", // Custom text color
+                border: "4px solid #4255ff",
+                backgroundColor: "#4255ff", // Custom background color
+                color: "#FFF", // Custom text color
+                fontWeight: "800",
+               
                 "&:hover": {
-                  backgroundColor: "#f89090", // Custom hover background color
+                  backgroundColor: "#4255ff", // Custom hover background color
                 },
               }}
             >
