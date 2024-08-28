@@ -19,6 +19,7 @@ import LibraryBookIcon from "@mui/icons-material/LibraryBooks";
 import CreateIcon from "@mui/icons-material/Create";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
+import { ForkLeft } from "@mui/icons-material";
 
 export default function Home() {
   // This function handles the Stripe checkout process when a user selects the Pro plan.
@@ -44,7 +45,7 @@ export default function Home() {
   return (
     <Box
     sx={{
-      my: 0,
+      my: (-1),
       display: "flex",
       flexDirection: "column",
       
@@ -57,7 +58,9 @@ export default function Home() {
         position="static"
         sx={{
           backgroundColor: "#ffffff",
+          
         }}
+        
       
       >
         <Toolbar
@@ -72,7 +75,7 @@ export default function Home() {
             sx={{
               gap: 2,
               "&:hover": {
-                backgroundColor: "#f89090", // Custom hover background color
+                backgroundColor: "#FFF", // Custom hover background color
               },
             }}
             href="/"
@@ -170,7 +173,7 @@ export default function Home() {
           gap: 3,
           alignItems: "center",
           backgroundColor: "#fff",
-          padding: "10px",
+          padding: "12px",
           
         }}
       >
@@ -184,6 +187,7 @@ export default function Home() {
           fontStyle: "normal",
           textShadow: "6px 6px 6px #0000",
           color: "black",
+          
           
           }}
       >
@@ -319,9 +323,10 @@ export default function Home() {
           alignItems: "center",
           textAlign: "center",
           backgroundColor: "#d9dde8",
+          
         }}
       >
-        <Box sx={{ marginBottom: "50px" }}>
+        <Box sx={{ marginBottom: "30px",}}>
           <Typography
             variant="h3"
             component="h2"
@@ -359,6 +364,7 @@ export default function Home() {
                       fontFamily: `'Mont Hairline', italic`,
                       fontWeight: "400",
                       fontStyle: "normal",
+                      
                     }}
                   >
                     Basic Plan
@@ -445,6 +451,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   sx={{
+                    
                     border: "4px solid #4255ff",
                     backgroundColor: "#4255ff", // Custom background color
                     color: "#FFFFFF", // Custom text color
