@@ -270,7 +270,7 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={4}>
-            <CreateIcon sx={{ color: "#000", fontSize: 50 }} />
+            <BookmarkIcon sx={{ color: "#000", fontSize: 50 }} />
             <Typography
               variant="h6"
               component="h2"
@@ -286,7 +286,7 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={4}>
-            <CreateIcon sx={{ color: "#000", fontSize: 50 }} />
+            <FolderOpenIcon sx={{ color: "#000", fontSize: 50 }} />
             <Typography
               variant="h6"
               component="h2"
