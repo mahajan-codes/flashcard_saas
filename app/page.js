@@ -44,31 +44,26 @@ export default function Home() {
   const href = isSignedIn ? "/generate" : "/sign-in";
   return (
     <Box
-    sx={{
-      my: (-1),
-      display: "flex",
-      flexDirection: "column",
-      
-      backgroundColor: "#d9dde8",
-    }}
+      sx={{
+        my: -1,
+        display: "flex",
+        flexDirection: "column",
+
+        backgroundColor: "#d9dde8",
+      }}
     >
-      
       {/* Header and Navbar */}
       <AppBar
         position="static"
         sx={{
           backgroundColor: "#ffffff",
-          
         }}
-        
-      
       >
         <Toolbar
           sx={{
             justifyContent: "space-between",
             display: "flex",
             flexDirection: "row",
-            
           }}
         >
           <Button
@@ -127,7 +122,7 @@ export default function Home() {
             </Box>
           </SignedOut>
           <SignedIn>
-            <Box sx={{ display: "flex", flexDirection: "row", gap: 2}}>
+            <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
               <Button
                 color="inherit"
                 variant="contained"
@@ -174,43 +169,38 @@ export default function Home() {
           alignItems: "center",
           backgroundColor: "#fff",
           padding: "12px",
-          
         }}
       >
         <Typography
-        variant="h3"
-        component="h1"
-        gutterBottom
-        sx={{
-          fontFamily: `'Mont Hairline', italic`,
-          fontWeight: "600",
-          fontStyle: "normal",
-          textShadow: "6px 6px 6px #0000",
-          color: "black",
-          
-          
+          variant="h3"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontFamily: `'Mont Hairline', italic`,
+            fontWeight: "600",
+            fontStyle: "normal",
+            textShadow: "6px 6px 6px #0000",
+            color: "black",
           }}
-      >
-        Boost Your Learning, One Flashcard at a Time
+        >
+          Boost Your Learning, One Flashcard at a Time
         </Typography>
 
         <Typography
-        variant="h3"
-        component="h1"
-        gutterBottom
-        sx={{
-          fontFamily: `'Mont Hairline', italic`,
-          fontWeight: "500",
-          fontStyle: "normal",
-          textShadow: "6px 6px 6px #0000",
-          color: "black",
+          variant="h3"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontFamily: `'Mont Hairline', italic`,
+            fontWeight: "500",
+            fontStyle: "normal",
+            textShadow: "6px 6px 6px #0000",
+            color: "black",
           }}
-      >
-        The easiest way to create flashcards from your text.
-        
+        >
+          The easiest way to create flashcards from your text.
         </Typography>
-        
-        
+
         <Button
           variant="contained"
           sx={{
@@ -218,8 +208,9 @@ export default function Home() {
             backgroundColor: "#4255ff",
             color: "#FFFFFF",
             "&:hover": {
-            backgroundColor: "#4255ff",},
-             }}
+              backgroundColor: "#4255ff",
+            },
+          }}
           href={href}
         >
           Get Started
@@ -227,7 +218,7 @@ export default function Home() {
       </Container>
       {/* Feature Section */}
       {/* This section highlights the key features of the application, using a grid layout to display them. */}
-      <Box
+      <Container
         sx={{
           my: 1,
           display: "flex",
@@ -278,7 +269,6 @@ export default function Home() {
             </Typography>
           </Grid>
 
-
           <Grid item xs={12} sm={6} md={4}>
             <CreateIcon sx={{ color: "#000", fontSize: 50 }} />
             <Typography
@@ -290,11 +280,10 @@ export default function Home() {
               Saved Flashcard Sets
             </Typography>
             <Typography color="black">
-            Easily save and access your flashcard sets for future study
-            sessions.
+              Easily save and access your flashcard sets for future study
+              sessions.
             </Typography>
           </Grid>
-
 
           <Grid item xs={12} sm={6} md={4}>
             <CreateIcon sx={{ color: "#000", fontSize: 50 }} />
@@ -307,15 +296,14 @@ export default function Home() {
               Interactive Learning
             </Typography>
             <Typography color="black">
-            Engage with your material through interactive flashcards designed
+              Engage with your material through interactive flashcards designed
               to enhance your study experience.
             </Typography>
           </Grid>
-
         </Grid>
-      </Box>
+      </Container>
       {/* Pricing Section - This section displays the pricing plans, including a “Pro” plan that uses Stripe for payment processing. */}
-      <Box
+      <Container
         sx={{
           my: 3,
           display: "flex",
@@ -323,10 +311,9 @@ export default function Home() {
           alignItems: "center",
           textAlign: "center",
           backgroundColor: "#d9dde8",
-          
         }}
       >
-        <Box sx={{ marginBottom: "30px",}}>
+        <Box sx={{ marginBottom: "30px" }}>
           <Typography
             variant="h3"
             component="h2"
@@ -336,7 +323,6 @@ export default function Home() {
               fontWeight: 400,
               textShadow: "6px 6px 6px #d9dde8",
               color: "black",
-            
             }}
           >
             Pricing
@@ -364,7 +350,6 @@ export default function Home() {
                       fontFamily: `'Mont Hairline', italic`,
                       fontWeight: "400",
                       fontStyle: "normal",
-                      
                     }}
                   >
                     Basic Plan
@@ -431,18 +416,14 @@ export default function Home() {
                 >
                   $0.99
                 </Typography>
-                <Typography
-                  variant="h7"
-                  component="div"
-                  sx={{ color: "#fff" }}
-                >
+                <Typography variant="h7" component="div" sx={{ color: "#fff" }}>
                   One time fee
                 </Typography>
                 <Box my={2}>
                   <Typography
                     variant="body1"
                     component="div"
-                    sx={{ color: "white"}}
+                    sx={{ color: "white" }}
                   >
                     Join our community and access essential features while
                     contributing to the continuous improvement of our AI model.
@@ -451,7 +432,6 @@ export default function Home() {
                 <Button
                   variant="contained"
                   sx={{
-                    
                     border: "4px solid #4255ff",
                     backgroundColor: "#4255ff", // Custom background color
                     color: "#FFFFFF", // Custom text color
@@ -467,7 +447,7 @@ export default function Home() {
             </Card>
           </Grid>
         </Grid>
-      </Box>
+      </Container>
     </Box>
   );
 }
