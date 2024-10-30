@@ -47,8 +47,8 @@ npm install --save @stripe/react-stripe-js @stripe/stripe-js
 npm install node
 ```
 ## Usage 
-Step 1: Enter your query/question.
-Step 2: Press the Generate button.
-Step 3: The flashcard loads and are ready for you.
+- Step 1: Enter your query/question.
+- Step 2: Press the Generate button.
+- Step 3: The flashcard loads and is ready for you.
 
 
