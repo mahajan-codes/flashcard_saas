@@ -1,26 +1,3 @@
-# flashcard_saas
-
-Project 4 of Headstarter Fellowship - Flashcards creation
-
-### Required Modules
-
-```bash
-npm install
-npm install --save @stripe/react-stripe-js @stripe/stripe-js
-npm install node
-```
-
-### Build
-
-```bash
-npm run build
-```
-
-### Development Server
-
-```bash
-npm run dev
-```
 # Study Stash - AI Flashcard Generator
 
 **Description**  
@@ -32,8 +9,6 @@ Study Stash AI Flashcard Generator generates customized flashcards from any inpu
 - [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -57,4 +32,6 @@ npm install node
 ## Technologies Used
 - Programming Languages: HTML, CSS, JavaScript
 - Frameworks: React.js
-- 
+- Tools: StripeAPI, OPENAI API
+
+
