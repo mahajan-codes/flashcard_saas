@@ -46,5 +46,4 @@ npm install
 npm install --save @stripe/react-stripe-js @stripe/stripe-js
 npm install node
 ```
-
-
+## Usage 
