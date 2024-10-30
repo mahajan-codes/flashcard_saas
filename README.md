@@ -24,7 +24,8 @@ npm run dev
 # Study Stash - AI Flashcard Generator
 
 **Description**  
-Provide a brief overview of your project here. Describe its purpose and what it aims to accomplish. You might want to include the problem it solves or the context it’s used in.
+Study Stash AI Flashcard Generator generates customized flashcards from any input text, making it easier to retain complex information and reinforce learning. Simply paste or upload your study materials, and the AI instantly creates question-answer pairs, summaries, and interactive flashcards to enhance your study sessions. Perfect for exam prep, daily review, or tackling new subjects, Study Stash turns your notes and textbooks into bite-sized, review-friendly content in seconds.
+
 
 ## Table of Contents
 - [Installation](#installation)
@@ -38,8 +39,12 @@ Provide a brief overview of your project here. Describe its purpose and what it 
 ## Installation
 
 ### Prerequisites
-List any prerequisites or dependencies needed to run the project (e.g., Python, Node.js, Docker, etc.). 
 
 ```bash
-# Example for Python
-pip install -r requirements.txt
+```bash
+npm install
+npm install --save @stripe/react-stripe-js @stripe/stripe-js
+npm install node
+```
+
+
