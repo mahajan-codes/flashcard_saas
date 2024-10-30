@@ -31,7 +31,6 @@ Study Stash AI Flashcard Generator generates customized flashcards from any inpu
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
@@ -51,4 +50,11 @@ npm install node
 - Step 2: Press the Generate button.
 - Step 3: The flashcard loads and is ready for you.
 
+## Features
+- Personal account to save personalized cards
+- Premium features
 
+## Technologies Used
+- Programming Languages: HTML, CSS, JavaScript
+- Frameworks: React.js
+- 
