@@ -18,6 +18,8 @@ Study Stash AI Flashcard Generator generates customized flashcards from any inpu
 - **Database**: Firebase
 - **Deployment**: Vercel
 
+**Access it through the following link: https://study-stash-3u9p.vercel.app/**
+
 ## Installation
 
 ### Prerequisites
