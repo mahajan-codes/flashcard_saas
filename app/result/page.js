@@ -77,7 +77,7 @@ const ResultPage = () => {
       ) : (
         <>
           <Typography variant="h4">Payment failed</Typography>
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 2,}}>
             <Typography variant="body1">
               Your payment was not successful. Please try again.
             </Typography>
