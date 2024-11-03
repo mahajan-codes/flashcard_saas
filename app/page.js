@@ -47,9 +47,14 @@ export default function Home() {
     sx={{
       my: (-1),
       display: "flex",
+      minHeight: "100vh",
       flexDirection: "column",
       marginLeft: "-18px",
+      
       backgroundColor: "#d9dde8",
+      justifyContent: "space-between",
+      width: "100.7%",
+      
       /* textAlign: "center",
           my: -1,
           display: "flex",
@@ -104,7 +109,7 @@ export default function Home() {
             Study Stash
           </Typography>
           <SignedOut>
-            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center",  }}>
               <Button
                 variant="contained"
                 sx={{
@@ -113,6 +118,7 @@ export default function Home() {
                   color: "#FFFFFF", // Custom text color
                   "&:hover": {
                     backgroundColor: "#4255ff", // Custom hover background color
+                    
                   },
                 }}
                 href="/sign-in"
