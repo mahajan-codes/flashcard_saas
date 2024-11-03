@@ -93,12 +93,16 @@ export default function Flashcard() {
   return (
     <Box
       sx={{
-      my: (-1),
-      display: "flex",
-      flexDirection: "column",
-      backgroundColor: "#d9dde8",
-    
-      
+        my: (-1),
+        display: "flex",
+        minHeight: "10vh",
+        flexDirection: "column",
+        marginLeft: "-18px",
+        marginBottom: "18px",
+        backgroundColor: "#d9dde8",
+        justifyContent: "space-between",
+        width: "100.7%",
+        paddingBottom: "60vh",
     }}>
 
       <AppBar
