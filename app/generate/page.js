@@ -113,10 +113,16 @@ export default function Generate() {
   return (
     <Box
     sx={{
-      my: -1,
+      my: (-1),
       display: "flex",
+      minHeight: "10vh",
       flexDirection: "column",
+      marginLeft: "-18px",
+      marginBottom: "18px",
       backgroundColor: "#d9dde8",
+      justifyContent: "space-between",
+      width: "100.7%",
+      paddingBottom: "50vh",
     }}>
       {/* Header and Navbar */}
       <AppBar
